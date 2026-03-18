@@ -1,1 +1,1 @@
-# biomina-intro-pytho
+# biomina-intro-python
