@@ -1,0 +1,5944 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Andreher00/biomina-intro-python/blob/patch-1/Added%20chapter%205%20to%20day1%20notebook\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "a14edb7e",
+      "metadata": {
+        "tags": [],
+        "id": "a14edb7e"
+      },
+      "source": [
+        "# Welcome\n",
+        "\n",
+        "This is the Jupyter notebook for Day 1 of BIOMINA's Introduction to Python and Data Analysis course, based on an adaptation of the excellent free and open-source book [*Think Python*, 3rd edition](https://greenteapress.com/wp/think-python-3rd-edition), by Allen B. Downey.\n",
+        "\n",
+        "Then, if you are not already running this notebook on Colab, [click here to run this notebook on Colab](https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap01.ipynb). ** FIX THIS LINK TO USE OUR VERSION**"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## What is a notebook?\n",
+        "\n",
+        "A Jupyter notebook is made up of cells, where each cell contains either text or code.\n",
+        "This cell contains text.\n",
+        "\n",
+        "The following cell contains code."
+      ],
+      "metadata": {
+        "id": "1k8hRnIG3mwX"
+      },
+      "id": "1k8hRnIG3mwX"
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('Hello')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KXV3Nubb3mZJ",
+        "outputId": "3f979179-f893-44ef-a127-43bac99d8f76"
+      },
+      "id": "KXV3Nubb3mZJ",
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "tags": [],
+        "id": "oARBdJdG3VaD"
+      },
+      "source": [
+        "Click on the previous cell to select it.\n",
+        "You should see a button on the left with a triangle inside a circle, which is the icon for \"Play\".\n",
+        "If you press this button, Jupyter runs the code in the cell and displays the result.\n",
+        "\n",
+        "When you run code in a notebook for the first time, it might take a few seconds to start.\n",
+        "And if it's a notebook you didn't write, you might get a warning message.\n",
+        "If you are running a notebook from a source you trust, which I hope includes us, you can press \"Run Anyway\"."
+      ],
+      "id": "oARBdJdG3VaD"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "tags": [],
+        "id": "87qX5MQ73VaE"
+      },
+      "source": [
+        "Instead of clicking the \"Play\" button, you can also run the code in a cell by holding down `Shift` and pressing `Enter`.\n",
+        "\n",
+        "If you are running this notebook on Colab, you should see buttons in the top left that say \"+ Code\" and \"+ Text\".  The first one adds a code cell and the second adds a text cell.\n",
+        "If you want to try them out, select this cell by clicking on it, then press the \"+ Text\" button.\n",
+        "A new cell should appear below this one."
+      ],
+      "id": "87qX5MQ73VaE"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "tags": [],
+        "id": "ii6edROL3VaE"
+      },
+      "source": [
+        "Add some text to the cell.\n",
+        "You can use the buttons to format it, or you can mark up the text using [Markdown](https://www.markdownguide.org/basic-syntax/).\n",
+        "When you are done, hold down `Shift` and press `Enter`, which will format the text you just typed and then move to the next cell."
+      ],
+      "id": "ii6edROL3VaE"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "PxnJ3DPL3VaE"
+      },
+      "source": [
+        "When you are done working on a notebook, you can close the window, but any changes you made will disappear.\n",
+        "If you make any changes you want to keep, open the File menu in the upper left.\n",
+        "You'll see several ways you can save the notebook.\n",
+        "\n",
+        "* If you have a Google account, you can save the notebook in your Drive.\n",
+        "\n",
+        "* If you have a GitHub account, you can save it on GitHub.\n",
+        "\n",
+        "* Or if you want to save the notebook on your computer, select \"Download\" and then \"Download .ipynb\" The suffix \".ipynb\" indicates that it is a notebook file, as opposed to \".py\", which indicates a file that contains Python code only."
+      ],
+      "id": "PxnJ3DPL3VaE"
+    },
+    {
+      "cell_type": "markdown",
+      "id": "3b4a1f57",
+      "metadata": {
+        "tags": [],
+        "id": "3b4a1f57"
+      },
+      "source": [
+        "The following cell downloads two files and runs some code that is used specifically for this book.\n",
+        "You don't have to understand this code yet, but you should run it before you do anything else in this notebook.\n",
+        "Remember that you can run the code by selecting the cell and pressing the play button (a triangle in a circle) or hold down `Shift` and press `Enter`."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "id": "213f9d96",
+      "metadata": {
+        "tags": [],
+        "id": "213f9d96",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "a4dada27-9288-425e-aad1-30e80afbf72c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Downloaded thinkpython.py\n",
+            "Downloaded diagram.py\n"
+          ]
+        }
+      ],
+      "source": [
+        "from os.path import basename, exists\n",
+        "\n",
+        "def download(url):\n",
+        "    filename = basename(url)\n",
+        "    if not exists(filename):\n",
+        "        from urllib.request import urlretrieve\n",
+        "\n",
+        "        local, _ = urlretrieve(url, filename)\n",
+        "        print(\"Downloaded \" + str(local))\n",
+        "    return filename\n",
+        "\n",
+        "download('https://github.com/AllenDowney/ThinkPython/raw/v3/thinkpython.py');\n",
+        "download('https://github.com/AllenDowney/ThinkPython/raw/v3/diagram.py');\n",
+        "\n",
+        "import thinkpython"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "333a6fc9",
+      "metadata": {
+        "tags": [],
+        "id": "333a6fc9"
+      },
+      "source": [
+        "# 1. Programming as a way of thinking\n",
+        "\n",
+        "The first goal of this course is to teach you how to program in Python.\n",
+        "But learning to program means learning a new way to think, so the second goal of this course is to help you think like a computer scientist.\n",
+        "This way of thinking combines some of the best features of mathematics, engineering, and natural science.\n",
+        "Like mathematicians, computer scientists use formal languages to denote ideas -- specifically computations.\n",
+        "Like engineers, they design things, assembling components into systems and evaluating trade-offs among alternatives.\n",
+        "Like scientists, they observe the behavior of complex systems, form hypotheses, and test predictions.\n",
+        "\n",
+        "We will start with the most basic elements of programming and work our way up.\n",
+        "First, we'll see how Python represents numbers, letters, and words.\n",
+        "And you'll learn to perform arithmetic operations.\n",
+        "\n",
+        "You will also start to learn the vocabulary of programming, including terms like operator, expression, value, and type.\n",
+        "This vocabulary is important -- you will need it to understand the rest of the book, to communicate with other programmers, and to use and understand virtual assistants."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "a371aea3",
+      "metadata": {
+        "id": "a371aea3"
+      },
+      "source": [
+        "## Arithmetic operators\n",
+        "\n",
+        "An **arithmetic operator** is a symbol that represents an arithmetic computation. For example, the plus sign, `+`, performs addition."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "2568ec84",
+      "metadata": {
+        "id": "2568ec84"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "fc0e7ce8",
+      "metadata": {
+        "id": "fc0e7ce8"
+      },
+      "source": [
+        "The minus sign, `-`, is the operator that performs subtraction."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "c4e75456",
+      "metadata": {
+        "id": "c4e75456"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "63e4e780",
+      "metadata": {
+        "id": "63e4e780"
+      },
+      "source": [
+        "The asterisk, `*`,  performs multiplication."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "022a7b16",
+      "metadata": {
+        "id": "022a7b16"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "a6192d13",
+      "metadata": {
+        "id": "a6192d13"
+      },
+      "source": [
+        "And the forward slash, `/`, performs division:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "05ae1098",
+      "metadata": {
+        "id": "05ae1098"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "641ad233",
+      "metadata": {
+        "id": "641ad233"
+      },
+      "source": [
+        "Notice that the result of the division is `42.0` rather than `42`. That's because there are two types of numbers in Python:\n",
+        "\n",
+        "* **integers**, which represent numbers with no fractional or decimal part, and\n",
+        "\n",
+        "* **floating-point numbers**, which represent integers and numbers with a decimal point.\n",
+        "\n",
+        "If you add, subtract, or multiply two integers, the result is an integer.\n",
+        "But if you divide two integers, the result is a floating-point number.\n",
+        "Python provides another operator, `//`, that performs **integer division**.\n",
+        "The result of integer division is always an integer."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "4df5bcaa",
+      "metadata": {
+        "id": "4df5bcaa"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "b2a620ab",
+      "metadata": {
+        "id": "b2a620ab"
+      },
+      "source": [
+        "Integer division is also called \"floor division\" because it always rounds down (toward the \"floor\")."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "ef08d549",
+      "metadata": {
+        "id": "ef08d549"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "41e2886a",
+      "metadata": {
+        "id": "41e2886a"
+      },
+      "source": [
+        "Finally, the operator `**` performs exponentiation; that is, it raises a\n",
+        "number to a power:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "df933e80",
+      "metadata": {
+        "id": "df933e80"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "b2502fb6",
+      "metadata": {
+        "id": "b2502fb6"
+      },
+      "source": [
+        "In some other languages, the caret, `^`, is used for exponentiation, but in Python\n",
+        "it is a bitwise operator called XOR.\n",
+        "If you are not familiar with bitwise operators, the result will be unexpected (and wrong)!"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "306b6b88",
+      "metadata": {
+        "id": "306b6b88"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "30078370",
+      "metadata": {
+        "id": "30078370"
+      },
+      "source": [
+        "Bitwise operators are out of scope for this course, but you can read about\n",
+        "them at <http://wiki.python.org/moin/BitwiseOperators>."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "0f5b7e97",
+      "metadata": {
+        "id": "0f5b7e97"
+      },
+      "source": [
+        "## Expressions\n",
+        "\n",
+        "A collection of operators and numbers is called an **expression**.\n",
+        "An expression can contain any number of operators and numbers.\n",
+        "For example, here's an expression that contains two operators."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "6e68101d",
+      "metadata": {
+        "id": "6e68101d"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "8e95039c",
+      "metadata": {
+        "id": "8e95039c"
+      },
+      "source": [
+        "Notice that exponentiation happens before addition.\n",
+        "Python follows the order of operations you might have learned in a math class: exponentiation happens before multiplication and division, which happen before addition and subtraction.\n",
+        "\n",
+        "In the following example, multiplication happens before addition."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "ffc25598",
+      "metadata": {
+        "id": "ffc25598"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "914a60d8",
+      "metadata": {
+        "id": "914a60d8"
+      },
+      "source": [
+        "If you want the addition to happen first, you can use parentheses."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "8dd1bd9a",
+      "metadata": {
+        "id": "8dd1bd9a"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "67ae0ae9",
+      "metadata": {
+        "id": "67ae0ae9"
+      },
+      "source": [
+        "Every expression has a **value**.\n",
+        "For example, the expression `6 * 7` has the value `42`."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "caebaa51",
+      "metadata": {
+        "id": "caebaa51"
+      },
+      "source": [
+        "## Arithmetic functions\n",
+        "\n",
+        "In addition to the arithmetic operators, Python provides a few **functions** that work with numbers.\n",
+        "For example, the `round` function takes a floating-point number and rounds it off to the nearest integer."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "1e3d5e01",
+      "metadata": {
+        "id": "1e3d5e01"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "d1b220b9",
+      "metadata": {
+        "id": "d1b220b9"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "f5738b4b",
+      "metadata": {
+        "id": "f5738b4b"
+      },
+      "source": [
+        "The `abs` function computes the absolute value of a number.\n",
+        "For a positive number, the absolute value is the number itself."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "ff742476",
+      "metadata": {
+        "id": "ff742476"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "e518494a",
+      "metadata": {
+        "id": "e518494a"
+      },
+      "source": [
+        "For a negative number, the absolute value is positive."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "9247c1a3",
+      "metadata": {
+        "id": "9247c1a3"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "6969ce45",
+      "metadata": {
+        "id": "6969ce45"
+      },
+      "source": [
+        "When we use a function like this, we say we're **calling** the function.\n",
+        "An expression that calls a function is a **function call**.\n",
+        "\n",
+        "When you call a function, the parentheses are required.\n",
+        "If you leave them out, you get an error message."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "5a73bfd5",
+      "metadata": {
+        "tags": [],
+        "id": "5a73bfd5"
+      },
+      "source": [
+        "NOTE: The following cell uses `%%expect`, which is a Jupyter \"magic command\" that means we expect the code in this cell to produce an error."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "4674b7ca",
+      "metadata": {
+        "tags": [],
+        "id": "4674b7ca",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 108
+        },
+        "outputId": "3fc61e46-e532-49f6-da5a-8d82d98d0fcb"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid syntax (3827346253.py, line 1)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_215/3827346253.py\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    abs 42\u001b[0m\n\u001b[0m        ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect SyntaxError\n",
+        "\n",
+        "abs 42"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "7d356f1b",
+      "metadata": {
+        "id": "7d356f1b"
+      },
+      "source": [
+        "You can ignore the first line of this message; it doesn't contain any information we need to understand right now.\n",
+        "The second line is the code that contains the error, with a caret (`^`) beneath it to indicate where the error was discovered.\n",
+        "\n",
+        "The last line indicates that this is a **syntax error**, which means that there is something wrong with the structure of the expression.\n",
+        "In this example, the problem is that a function call requires parentheses.\n",
+        "\n",
+        "If you are using Google Colab you will also see a button to prompt Gemini for an explanation of the error, this could be very useful if you encounter errors ypu don't understand!\n",
+        "\n",
+        "Let's see what happens if you leave out the parentheses *and* the value."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "7d3e8127",
+      "metadata": {
+        "id": "7d3e8127"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "94478885",
+      "metadata": {
+        "id": "94478885"
+      },
+      "source": [
+        "A function name all by itself is a legal expression that has a value.\n",
+        "When it's displayed, the value indicates that `abs` is a function, and it includes some additional information I'll explain later."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "31a85d17",
+      "metadata": {
+        "id": "31a85d17"
+      },
+      "source": [
+        "## Strings\n",
+        "\n",
+        "In addition to numbers, Python can also represent sequences of letters, which are called **strings** because the letters are strung together like beads on a necklace.\n",
+        "To write a string, we can put a sequence of letters inside straight quotation marks."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "bd8ae45f",
+      "metadata": {
+        "id": "bd8ae45f"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "d20050d8",
+      "metadata": {
+        "id": "d20050d8"
+      },
+      "source": [
+        "It is also legal to use double quotation marks."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "01d0055e",
+      "metadata": {
+        "id": "01d0055e"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "76f5edb7",
+      "metadata": {
+        "id": "76f5edb7"
+      },
+      "source": [
+        "Double quotes make it easy to write a string that contains an apostrophe, which is the same symbol as a straight quote."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "0295acab",
+      "metadata": {
+        "id": "0295acab"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "d62d4b1c",
+      "metadata": {
+        "id": "d62d4b1c"
+      },
+      "source": [
+        "Strings can also contain spaces, punctuation, and digits."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "cf918917",
+      "metadata": {
+        "id": "cf918917"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "9ad47f7a",
+      "metadata": {
+        "id": "9ad47f7a"
+      },
+      "source": [
+        "The `+` operator works with strings; it joins two strings into a single string, which is called **concatenation**"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "aefe6af1",
+      "metadata": {
+        "id": "aefe6af1"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "0ad969a3",
+      "metadata": {
+        "id": "0ad969a3"
+      },
+      "source": [
+        "The `*` operator also works with strings; it makes multiple copies of a string and concatenates them."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "42e9e4e2",
+      "metadata": {
+        "id": "42e9e4e2"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "dfba16a5",
+      "metadata": {
+        "id": "dfba16a5"
+      },
+      "source": [
+        "The other arithmetic operators don't work with strings.\n",
+        "\n",
+        "Python provides a function called `len` that computes the length of a string."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "a5e837db",
+      "metadata": {
+        "id": "a5e837db"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "d91e00b3",
+      "metadata": {
+        "id": "d91e00b3"
+      },
+      "source": [
+        "Notice that `len` counts the letters between the quotes, but not the quotes.\n",
+        "\n",
+        "When you create a string, be sure to use straight quotes.\n",
+        "The back quote, also known as a backtick, causes a syntax error."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "e3f65f19",
+      "metadata": {
+        "tags": [],
+        "id": "e3f65f19",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 108
+        },
+        "outputId": "20ad7de9-c5ba-4682-872c-6174732ae365"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid syntax (1580190030.py, line 1)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_215/1580190030.py\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    `Hello`\u001b[0m\n\u001b[0m    ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect SyntaxError\n",
+        "\n",
+        "`Hello`"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "40d893d1",
+      "metadata": {
+        "id": "40d893d1"
+      },
+      "source": [
+        "Smart quotes, also known as curly quotes, are also illegal."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "a705b980",
+      "metadata": {
+        "tags": [],
+        "id": "a705b980",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 108
+        },
+        "outputId": "49ea0e21-fce8-400f-ffb8-e8bd2ec8e8a7"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid character '‘' (U+2018) (232449189.py, line 1)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_215/232449189.py\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    ‘Hello’\u001b[0m\n\u001b[0m    ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid character '‘' (U+2018)\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect SyntaxError\n",
+        "\n",
+        "‘Hello’"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "5471d4f8",
+      "metadata": {
+        "id": "5471d4f8"
+      },
+      "source": [
+        "## Values and types\n",
+        "\n",
+        "So far we've seen three kinds of values:\n",
+        "\n",
+        "* `2` is an integer,\n",
+        "\n",
+        "* `42.0` is a floating-point number, and\n",
+        "\n",
+        "* `'Hello'` is a string.\n",
+        "\n",
+        "A kind of value is called a **type**.\n",
+        "Every value has a type -- or we sometimes say it \"belongs to\" a type.\n",
+        "\n",
+        "Python provides a function called `type` that tells you the type of any value.\n",
+        "The type of an integer is `int`."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "3df8e2c5",
+      "metadata": {
+        "id": "3df8e2c5"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "b137814c",
+      "metadata": {
+        "id": "b137814c"
+      },
+      "source": [
+        "The type of a floating-point number is `float`."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "c4732c8d",
+      "metadata": {
+        "id": "c4732c8d"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "266dea4e",
+      "metadata": {
+        "id": "266dea4e"
+      },
+      "source": [
+        "And the type of a string is `str`."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "8f65ac45",
+      "metadata": {
+        "id": "8f65ac45"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "76d216ed",
+      "metadata": {
+        "id": "76d216ed"
+      },
+      "source": [
+        "The types `int`, `float`, and `str` can be used as functions.\n",
+        "For example, `int` can take a floating-point number and convert it to an integer (always rounding down)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "84b22f2f",
+      "metadata": {
+        "id": "84b22f2f"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "dcd8d114",
+      "metadata": {
+        "id": "dcd8d114"
+      },
+      "source": [
+        "And `float` can convert an integer to a floating-point value."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "9b66ee21",
+      "metadata": {
+        "id": "9b66ee21"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "eda70b61",
+      "metadata": {
+        "id": "eda70b61"
+      },
+      "source": [
+        "Now, here's something that can be confusing.\n",
+        "What do you get if you put a sequence of digits in quotes?"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "f64e107c",
+      "metadata": {
+        "id": "f64e107c"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "fdded653",
+      "metadata": {
+        "id": "fdded653"
+      },
+      "source": [
+        "It looks like a number, but it is actually a string."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "609a8153",
+      "metadata": {
+        "id": "609a8153"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "2683ac35",
+      "metadata": {
+        "id": "2683ac35"
+      },
+      "source": [
+        "If you try to use it like a number, you might get an error."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "1cf21da4",
+      "metadata": {
+        "tags": [],
+        "id": "1cf21da4",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 55
+        },
+        "outputId": "90c7e2b2-5f89-47f6-e5a7-c8a5a2d23ed8"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "unsupported operand type(s) for /: 'str' and 'int'",
+          "traceback": [
+            "\u001b[0;31mTypeError\u001b[0m\u001b[0;31m:\u001b[0m unsupported operand type(s) for /: 'str' and 'int'\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect TypeError\n",
+        "\n",
+        "'126' / 3"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "32c11cc4",
+      "metadata": {
+        "id": "32c11cc4"
+      },
+      "source": [
+        "This example generates a `TypeError`, which means that the values in the expression, which are called **operands**, have the wrong type.\n",
+        "The error message indicates that the `/` operator does not support the types of these values, which are `str` and `int`.\n",
+        "\n",
+        "If you have a string that contains digits, you can use `int` to convert it to an integer."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "d45e6a60",
+      "metadata": {
+        "id": "d45e6a60"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "86935d56",
+      "metadata": {
+        "id": "86935d56"
+      },
+      "source": [
+        "If you have a string that contains digits and a decimal point, you can use `float` to convert it to a floating-point number."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "db30b719",
+      "metadata": {
+        "id": "db30b719"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "03103ef4",
+      "metadata": {
+        "id": "03103ef4"
+      },
+      "source": [
+        "When you write a large integer, you might be tempted to use commas\n",
+        "between groups of digits, as in `1,000,000`.\n",
+        "This is a legal expression in Python, but the result is not an integer."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "d72b6af1",
+      "metadata": {
+        "id": "d72b6af1"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "3d24af71",
+      "metadata": {
+        "id": "3d24af71"
+      },
+      "source": [
+        "Python interprets `1,000,000` as a comma-separated sequence of integers.\n",
+        "We'll learn more about this kind of sequence later.\n",
+        "\n",
+        "You can use underscores to make large numbers easier to read."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "e19bf7e7",
+      "metadata": {
+        "id": "e19bf7e7"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "id": "1761cbac",
+      "metadata": {
+        "id": "1761cbac"
+      },
+      "source": [
+        "## Formal and natural languages\n",
+        "\n",
+        "**Natural languages** are the languages people speak, like English, Spanish, and French. They were not designed by people; they evolved naturally.\n",
+        "\n",
+        "**Formal languages** are languages that are designed by people for specific applications.\n",
+        "For example, the notation that mathematicians use is a formal language that is particularly good at denoting relationships among numbers and symbols.\n",
+        "Similarly, programming languages are formal languages that have been designed to express computations."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "1bf3d2dc",
+      "metadata": {
+        "id": "1bf3d2dc"
+      },
+      "source": [
+        "Although formal and natural languages have some features in\n",
+        "common there are important differences:\n",
+        "\n",
+        "* Ambiguity: Natural languages are full of ambiguity, which people deal with by\n",
+        "    using contextual clues and other information. Formal languages are\n",
+        "    designed to be nearly or completely unambiguous, which means that\n",
+        "    any program has exactly one meaning, regardless of context.\n",
+        "\n",
+        "* Redundancy: In order to make up for ambiguity and reduce misunderstandings,\n",
+        "    natural languages use redundancy. As a result, they are\n",
+        "    often verbose. Formal languages are less redundant and more concise.\n",
+        "\n",
+        "* Literalness: Natural languages are full of idiom and metaphor. Formal languages mean exactly what they say."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "78a1cec8",
+      "metadata": {
+        "id": "78a1cec8"
+      },
+      "source": [
+        "Because we all grow up speaking natural languages, it is sometimes hard to adjust to formal languages.\n",
+        "Formal languages are more dense than natural languages, so it takes longer to read them.\n",
+        "Also, the structure is important, so it is not always best to read from top to bottom, left to right.\n",
+        "Finally, the details matter. Small errors in spelling and\n",
+        "punctuation, which you can get away with in natural languages, can make\n",
+        "a big difference in a formal language."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "4358fa9a",
+      "metadata": {
+        "id": "4358fa9a"
+      },
+      "source": [
+        "## Debugging\n",
+        "\n",
+        "Programmers make mistakes. For whimsical reasons, programming errors are called **bugs** and the process of tracking them down is called **debugging**.\n",
+        "\n",
+        "Programming, and especially debugging, sometimes brings out strong emotions. If you are struggling with a difficult bug, you might feel angry, sad, or embarrassed.\n",
+        "\n",
+        "Preparing for these reactions might help you deal with them. One approach is to think of the computer as an employee with certain strengths, like speed and precision, and particular weaknesses, like lack of empathy and inability to grasp the big picture.\n",
+        "\n",
+        "Your job is to be a good manager: find ways to take advantage of the strengths and mitigate the weaknesses. And find ways to use your emotions to engage with the problem, without letting your reactions interfere with your ability to work effectively.\n",
+        "\n",
+        "Learning to debug can be frustrating, but it is a valuable skill that is useful for many activities beyond programming. At the end of each chapter there is a section, like this one, with my suggestions for debugging. I hope they help!"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "33b8ad00",
+      "metadata": {
+        "id": "33b8ad00"
+      },
+      "source": [
+        "## Glossary\n",
+        "\n",
+        "**arithmetic operator:**\n",
+        "A symbol, like `+` and `*`, that denotes an arithmetic operation like addition or multiplication.\n",
+        "\n",
+        "**integer:**\n",
+        "A type that represents numbers with no fractional or decimal part.\n",
+        "\n",
+        "**floating-point:**\n",
+        "A type that represents integers and numbers with decimal parts.\n",
+        "\n",
+        "**integer division:**\n",
+        "An operator, `//`, that divides two numbers and rounds down to an integer.\n",
+        "\n",
+        "**expression:**\n",
+        "A combination of variables, values, and operators.\n",
+        "\n",
+        "**value:**\n",
+        "An integer, floating-point number, or string -- or one of other kinds of values we will see later.\n",
+        "\n",
+        "**function:**\n",
+        "A named sequence of statements that performs some useful operation.\n",
+        "Functions may or may not take arguments and may or may not produce a result.\n",
+        "\n",
+        "**function call:**\n",
+        "An expression -- or part of an expression -- that runs a function.\n",
+        "It consists of the function name followed by an argument list in parentheses.\n",
+        "\n",
+        "**syntax error:**\n",
+        "An error in a program that makes it impossible to parse -- and therefore impossible to run.\n",
+        "\n",
+        "**string:**\n",
+        " A type that represents sequences of characters.\n",
+        "\n",
+        "**concatenation:**\n",
+        "Joining two strings end-to-end.\n",
+        "\n",
+        "**type:**\n",
+        "A category of values.\n",
+        "The types we have seen so far are integers (type `int`), floating-point numbers (type ` float`), and strings (type `str`).\n",
+        "\n",
+        "**operand:**\n",
+        "One of the values on which an operator operates.\n",
+        "\n",
+        "**natural language:**\n",
+        "Any of the languages that people speak that evolved naturally.\n",
+        "\n",
+        "**formal language:**\n",
+        "Any of the languages that people have designed for specific purposes, such as representing mathematical ideas or computer programs.\n",
+        "All programming languages are formal languages.\n",
+        "\n",
+        "**bug:**\n",
+        "An error in a program.\n",
+        "\n",
+        "**debugging:**\n",
+        "The process of finding and correcting errors."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "ed4ec01b",
+      "metadata": {
+        "id": "ed4ec01b"
+      },
+      "source": [
+        "## Exercises"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "06d3e72c",
+      "metadata": {
+        "tags": [],
+        "id": "06d3e72c",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "d8f81ba0-065f-4695-9d56-52e44e5c9fd0"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Exception reporting mode: Verbose\n"
+          ]
+        }
+      ],
+      "source": [
+        "# This cell tells Jupyter to provide detailed debugging information\n",
+        "# when a runtime error occurs. Run it before working on the exercises.\n",
+        "\n",
+        "%xmode Verbose"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "23adf208",
+      "metadata": {
+        "id": "23adf208"
+      },
+      "source": [
+        "### Ask a virtual assistant\n",
+        "\n",
+        "There are several ways you can use a virtual assistant or chatbot to help you learn.\n",
+        "\n",
+        "* If you want to learn more about a topic, or anything is unclear, you can ask for an explanation.\n",
+        "\n",
+        "* If you are having a hard time with any of the exercises, you can ask for help.\n",
+        "\n",
+        "In each chapter, we'll suggest exercises you can do with a virtual assistant, but we encourage you to try things on your own and see what works for you."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "ebf1a451",
+      "metadata": {
+        "id": "ebf1a451"
+      },
+      "source": [
+        "Here are some topics you could ask a virtual assistant about:\n",
+        "\n",
+        "* Earlier we mentioned bitwise operators but we didn't explain why the value of `7 ^ 2` is 5. Try asking \"What are the bitwise operators in Python?\" or \"What is the value of `7 XOR 2`?\"\n",
+        "\n",
+        "* We also mentioned the order of operations. For more details, ask \"What is the order of operations in Python?\"\n",
+        "\n",
+        "* The `round` function, which we used to round a floating-point number to the nearest integer, can take a second argument. Try asking \"What are the arguments of the round function?\" or \"How do I round pi off to three decimal places?\"\n",
+        "\n",
+        "* There's one more arithmetic operator we didn't mention; try asking \"What is the modulus operator in Python?\""
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "9be3e1c7",
+      "metadata": {
+        "id": "9be3e1c7"
+      },
+      "source": [
+        "Most virtual assistants know about Python, so they answer questions like this pretty reliably.\n",
+        "But remember that these tools make mistakes.\n",
+        "If you get code from a chatbot, test it! The goal of this course is to give you instruments to critically evaluate LLM-suggested code!"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "03c1ef93",
+      "metadata": {
+        "id": "03c1ef93"
+      },
+      "source": [
+        "### Exercise\n",
+        "\n",
+        "You might wonder what `round` does if a number ends in `0.5`.\n",
+        "The answer is that it sometimes rounds up and sometimes rounds down.\n",
+        "Try these examples and see if you can figure out what rule it follows."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "5d358f37",
+      "metadata": {
+        "id": "5d358f37",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "3e9225ff-a734-42f7-ef22-477f78c511fb"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "42"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 8
+        }
+      ],
+      "source": [
+        "round(42.5)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "12aa59a3",
+      "metadata": {
+        "id": "12aa59a3",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "bccbc899-fd30-4c8f-a06d-6999ba9027ed"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "44"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 9
+        }
+      ],
+      "source": [
+        "round(43.5)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "dd2f890e",
+      "metadata": {
+        "id": "dd2f890e"
+      },
+      "source": [
+        "If you are curious, ask a virtual assistant, \"If a number ends in 0.5, does Python round up or down?\""
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "2cd03bcb",
+      "metadata": {
+        "id": "2cd03bcb"
+      },
+      "source": [
+        "### Exercise\n",
+        "\n",
+        "When you learn about a new feature, you should try it out and make mistakes on purpose.\n",
+        "That way, you learn the error messages, and when you see them again, you will know what they mean.\n",
+        "It is better to make mistakes now and deliberately than later and accidentally.\n",
+        "\n",
+        "1.  You can use a minus sign to make a negative number like `-2`. What happens if you put a plus sign before a number? What about `2++2`?\n",
+        "\n",
+        "2.  What happens if you have two values with no operator between them, like `4 2`?\n",
+        "\n",
+        "3.  If you call a function like `round(42.5)`, what happens if you leave out one or both parentheses?"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "1fb0adfe",
+      "metadata": {
+        "id": "1fb0adfe"
+      },
+      "source": [
+        "### Exercise\n",
+        "\n",
+        "Recall that every expression has a value, every value has a type, and we can use the `type` function to find the type of any value.\n",
+        "\n",
+        "What is the type of the value of the following expressions? Make your best guess for each one, and then use `type` to find out.\n",
+        "\n",
+        "* `765`\n",
+        "\n",
+        "* `2.718`\n",
+        "\n",
+        "* `'2 pi'`\n",
+        "\n",
+        "* `abs(-7)`\n",
+        "\n",
+        "* `abs(-7.0)`\n",
+        "\n",
+        "* `abs`\n",
+        "\n",
+        "* `int`\n",
+        "\n",
+        "* `type`"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "23762eec",
+      "metadata": {
+        "id": "23762eec"
+      },
+      "source": [
+        "### Exercise\n",
+        "\n",
+        "The following questions give you a chance to practice writing arithmetic expressions.\n",
+        "\n",
+        "1.  How many seconds are there in 42 minutes 42 seconds?\n",
+        "\n",
+        "2.  How many miles are there in 10 kilometers? Hint: there are 1.61 kilometers in a mile.\n",
+        "\n",
+        "3.  If you run a 10 kilometer race in 42 minutes 42 seconds, what is your average pace in seconds per mile?\n",
+        "    \n",
+        "4.  What is your average pace in minutes and seconds per mile?\n",
+        "\n",
+        "5.  What is your average speed in miles per hour?\n",
+        "\n",
+        "If you already know about variables, you can use them for this exercise.\n",
+        "If you don't, you can do the exercise without them -- and then we'll see them in the next topic."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# This cell tells Jupyter to go back to normal (non-verbose) exception reporting\n",
+        "# Run it before moving on to the next chapter.\n",
+        "\n",
+        "%xmode Context"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rjG4jBAFBA9X",
+        "outputId": "32b572f6-b823-4ef4-df17-bec0d99a2af9"
+      },
+      "id": "rjG4jBAFBA9X",
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Exception reporting mode: Context\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "d0286422"
+      },
+      "source": [
+        "# 2. Variables and Statements\n",
+        "\n",
+        "In the previous topic, we used operators to write expressions that perform arithmetic computations.\n",
+        "\n",
+        "In this chapter, you'll learn about variables and statements, the `import` statement, and the `print` function.\n",
+        "And we'll introduce more of the vocabulary we use to talk about programs, including \"argument\" and \"module\".\n"
+      ],
+      "id": "d0286422"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "4ac44f0c"
+      },
+      "source": [
+        "## Variables\n",
+        "\n",
+        "A **variable** is a name that refers to a value.\n",
+        "To create a variable, we can write a **assignment statement** like this."
+      ],
+      "id": "4ac44f0c"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "59f6db42"
+      },
+      "outputs": [],
+      "source": [
+        "n = 17"
+      ],
+      "id": "59f6db42"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "52f187f1"
+      },
+      "source": [
+        "An assignment statement has three parts: the name of the variable on the left, the equals operator, `=`, and an expression on the right.\n",
+        "In this example, the expression is an integer.\n",
+        "In the following example, the expression is a floating-point number."
+      ],
+      "id": "52f187f1"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1301f6af"
+      },
+      "outputs": [],
+      "source": [
+        "pi = 3.141592653589793"
+      ],
+      "id": "1301f6af"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3e27e65c"
+      },
+      "source": [
+        "And in the following example, the expression is a string."
+      ],
+      "id": "3e27e65c"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "f7adb732"
+      },
+      "outputs": [],
+      "source": [
+        "message = 'And now for something completely different'"
+      ],
+      "id": "f7adb732"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "cb5916ea"
+      },
+      "source": [
+        "When you run an assignment statement, there is no output.\n",
+        "Python creates the variable and gives it a value, but the assignment statement has no visible effect.\n",
+        "However, after creating a variable, you can use it as an expression.\n",
+        "So we can display the value of `message` like this:"
+      ],
+      "id": "cb5916ea"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "6bcc0a66"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "6bcc0a66"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "e3fd81de"
+      },
+      "source": [
+        "You can also use a variable as part of an expression with arithmetic operators."
+      ],
+      "id": "e3fd81de"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "3f11f497"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "3f11f497"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "6b2dafea"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "6b2dafea"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "97396e7d"
+      },
+      "source": [
+        "And you can use a variable when you call a function."
+      ],
+      "id": "97396e7d"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "72c45ac5"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "72c45ac5"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "6bf81c52"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "6bf81c52"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "397d9da3"
+      },
+      "source": [
+        "## State diagrams\n",
+        "\n",
+        "A common way to represent variables on paper is to write the name with\n",
+        "an arrow pointing to its value."
+      ],
+      "id": "397d9da3"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "tags": [],
+        "id": "2c25e84e"
+      },
+      "outputs": [],
+      "source": [
+        "import math\n",
+        "\n",
+        "from diagram import make_binding, Frame\n",
+        "\n",
+        "binding = make_binding(\"message\", 'And now for something completely different')\n",
+        "binding2 = make_binding(\"n\", 17)\n",
+        "binding3 = make_binding(\"pi\", 3.141592653589793)\n",
+        "\n",
+        "frame = Frame([binding2, binding3, binding])"
+      ],
+      "id": "2c25e84e"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "metadata": {
+        "tags": [],
+        "id": "5b27a635",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 138
+        },
+        "outputId": "d7545faa-4e05-4698-b5af-3584f01a958e"
+      },
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<Figure size 362x101 with 1 Axes>"
+            ],
+            "image/png": "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\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "source": [
+        "from diagram import diagram, adjust\n",
+        "\n",
+        "\n",
+        "width, height, x, y = [3.62, 1.01, 0.6, 0.76]\n",
+        "ax = diagram(width, height)\n",
+        "bbox = frame.draw(ax, x, y, dy=-0.25)\n",
+        "# adjust(x, y, bbox)"
+      ],
+      "id": "5b27a635"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6f40da93"
+      },
+      "source": [
+        "This kind of figure is called a **state diagram** because it shows what state each of the variables is in (think of it as the variable's state of mind).\n",
+        "We'll use state diagrams throughout the book to represent a model of how Python stores variables and their values."
+      ],
+      "id": "6f40da93"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ba252c85"
+      },
+      "source": [
+        "## Variable names\n",
+        "\n",
+        "Variable names can be as long as you like. They can contain both letters and numbers, but they can't begin with a number.\n",
+        "It is legal to use uppercase letters, but it is conventional to use only lower case for\n",
+        "variable names.\n",
+        "\n",
+        "The only punctuation that can appear in a variable name is the underscore character, `_`. It is often used in names with multiple words, such as `your_name` or  `airspeed_of_unladen_swallow`.\n",
+        "\n",
+        "If you give a variable an illegal name, you get a syntax error.\n",
+        "The name `million!` is illegal because it contains punctuation."
+      ],
+      "id": "ba252c85"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "tags": [],
+        "id": "ac2620ef",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 108
+        },
+        "outputId": "a73127c3-904e-47d5-c04b-4aa683f26139"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid syntax (4061783710.py, line 1)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_904/4061783710.py\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    million! = 1000000\u001b[0m\n\u001b[0m           ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect SyntaxError\n",
+        "\n",
+        "million! = 1000000"
+      ],
+      "id": "ac2620ef"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "a1cefe3e"
+      },
+      "source": [
+        "`76trombones` is illegal because it starts with a number."
+      ],
+      "id": "a1cefe3e"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 6,
+      "metadata": {
+        "tags": [],
+        "id": "1a8b8382",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 108
+        },
+        "outputId": "22e94fdc-6b2c-4042-e4bf-741098dfe4fb"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid decimal literal (3636686625.py, line 1)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_904/3636686625.py\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    76trombones = 'big parade'\u001b[0m\n\u001b[0m     ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid decimal literal\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect SyntaxError\n",
+        "\n",
+        "76trombones = 'big parade'"
+      ],
+      "id": "1a8b8382"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "94aa7e60"
+      },
+      "source": [
+        "`class` is also illegal, but it might not be obvious why."
+      ],
+      "id": "94aa7e60"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "metadata": {
+        "tags": [],
+        "id": "b6938851",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 108
+        },
+        "outputId": "ad4041df-94ed-4ded-c76d-82e9fefdd777"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid syntax (3285659805.py, line 1)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_904/3285659805.py\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    class = 'Self-Defence Against Fresh Fruit'\u001b[0m\n\u001b[0m          ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect SyntaxError\n",
+        "\n",
+        "class = 'Self-Defence Against Fresh Fruit'"
+      ],
+      "id": "b6938851"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "784cfb5c"
+      },
+      "source": [
+        "It turns out that `class` is a **keyword**, which is a special word used to specify the structure of a program.\n",
+        "Keywords can't be used as variable names.\n",
+        "\n",
+        "Here's a complete list of Python's keywords:"
+      ],
+      "id": "784cfb5c"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "127c07e8"
+      },
+      "source": [
+        "```\n",
+        "False      await      else       import     pass\n",
+        "None       break      except     in         raise\n",
+        "True       class      finally    is         return\n",
+        "and        continue   for        lambda     try\n",
+        "as         def        from       nonlocal   while\n",
+        "assert     del        global     not        with\n",
+        "async      elif       if         or         yield\n",
+        "```"
+      ],
+      "id": "127c07e8"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "metadata": {
+        "tags": [],
+        "id": "4a8f4b3e",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "bafaee4d-c61c-4982-9759-0c7a0cbd55d9"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "35"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 8
+        }
+      ],
+      "source": [
+        "from keyword import kwlist\n",
+        "\n",
+        "len(kwlist)"
+      ],
+      "id": "4a8f4b3e"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6f14d301"
+      },
+      "source": [
+        "You don't have to memorize this list. In most development environments,\n",
+        "keywords are displayed in a different color; if you try to use one as a\n",
+        "variable name, you'll know."
+      ],
+      "id": "6f14d301"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "c954a3b0"
+      },
+      "source": [
+        "## The import statement\n",
+        "\n",
+        "In order to use some Python features, you have to **import** them.\n",
+        "For example, the following statement imports the `math` module."
+      ],
+      "id": "c954a3b0"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "98c268e9"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "98c268e9"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ea4f75ec"
+      },
+      "source": [
+        "A **module** is a collection of variables and functions.\n",
+        "The math module provides a variable called `pi` that contains the value of the mathematical constant denoted $\\pi$.\n",
+        "We can display its value like this."
+      ],
+      "id": "ea4f75ec"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "47bc17c9"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "47bc17c9"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "c96106e4"
+      },
+      "source": [
+        "To use a variable in a module, you have to use the **dot operator** (`.`) between the name of the module and the name of the variable.\n",
+        "\n",
+        "The math module also contains functions.\n",
+        "For example, `sqrt` computes square roots."
+      ],
+      "id": "c96106e4"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "fd1cec63"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "fd1cec63"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "185e94a3"
+      },
+      "source": [
+        "And `pow` raises one number to the power of a second number."
+      ],
+      "id": "185e94a3"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "87316ddd"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "87316ddd"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5df25a9a"
+      },
+      "source": [
+        "At this point we've seen two ways to raise a number to a power: we can use the `math.pow` function or the exponentiation operator, `**`.\n",
+        "Either one is fine, but the operator is used more often than the function."
+      ],
+      "id": "5df25a9a"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6538f22b"
+      },
+      "source": [
+        "## Expressions and statements\n",
+        "\n",
+        "So far, we've seen a few kinds of expressions.\n",
+        "An expression can be a single value, like an integer, floating-point number, or string.\n",
+        "It can also be a collection of values and operators.\n",
+        "And it can include variable names and function calls.\n",
+        "Here's an expression that includes several of these elements."
+      ],
+      "id": "6538f22b"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "7f0b92df"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "7f0b92df"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "000dd2ba"
+      },
+      "source": [
+        "We have also seen a few kind of statements.\n",
+        "A **statement** is a unit of code that has an effect, but no value.\n",
+        "For example, an assignment statement creates a variable and gives it a value, but the statement itself has no value."
+      ],
+      "id": "000dd2ba"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "b882c340"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "b882c340"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "cff0414b"
+      },
+      "source": [
+        "Similarly, an import statement has an effect -- it imports a module so we can use the variables and functions it contains -- but it has no immediate visible result."
+      ],
+      "id": "cff0414b"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "299817d8"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "299817d8"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "2aeb1000"
+      },
+      "source": [
+        "Computing the value of an expression is called **evaluation**.\n",
+        "Running a statement is called **execution**."
+      ],
+      "id": "2aeb1000"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "f61601e4"
+      },
+      "source": [
+        "## The print function\n",
+        "\n",
+        "When you evaluate an expression, the result is displayed."
+      ],
+      "id": "f61601e4"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "805977c6"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "805977c6"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "efacf0fa"
+      },
+      "source": [
+        "But if you evaluate more than one expression, only the value of the last one is displayed."
+      ],
+      "id": "efacf0fa"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "962e08ab"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "962e08ab"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "cf2b991d"
+      },
+      "source": [
+        "To display more than one value, you can use the `print` function."
+      ],
+      "id": "cf2b991d"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "a797e44d"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "a797e44d"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "29af1f89"
+      },
+      "source": [
+        "It also works with floating-point numbers and strings."
+      ],
+      "id": "29af1f89"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "73428520"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "73428520"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8b4d7f4a"
+      },
+      "source": [
+        "You can also use a sequence of expressions separated by commas."
+      ],
+      "id": "8b4d7f4a"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "9ad5bddd"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "9ad5bddd"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "af447ec4"
+      },
+      "source": [
+        "Notice that the `print` function puts a space between the values."
+      ],
+      "id": "af447ec4"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "7c73a2fa"
+      },
+      "source": [
+        "## Arguments\n",
+        "\n",
+        "When you call a function, the expression in parenthesis is called an **argument**.\n",
+        "\n",
+        "Some of the functions we've seen so far take only one argument, like `int`."
+      ],
+      "id": "7c73a2fa"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "060c60cf"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "060c60cf"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "c4ad4f2c"
+      },
+      "source": [
+        "Some take two, like `math.pow`."
+      ],
+      "id": "c4ad4f2c"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "2875d9e0"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "2875d9e0"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "17293749"
+      },
+      "source": [
+        "Some can take additional arguments that are optional.\n",
+        "For example, `int` can take a second argument that specifies the base of the number."
+      ],
+      "id": "17293749"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "43b9cf38"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "43b9cf38"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "c95589a1"
+      },
+      "source": [
+        "The sequence of digits `101` in base 2 represents the number 5 in base 10.\n",
+        "\n",
+        "`round` also takes an optional second argument, which is the number of decimal places to round off to."
+      ],
+      "id": "c95589a1"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "e8a21d05"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "e8a21d05"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "21e4a448"
+      },
+      "source": [
+        "Some functions can take any number of arguments, like `print`."
+      ],
+      "id": "21e4a448"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "724128f4"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "724128f4"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "667cff14"
+      },
+      "source": [
+        "If you call a function and provide too many arguments, that's a `TypeError`."
+      ],
+      "id": "667cff14"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 9,
+      "metadata": {
+        "tags": [],
+        "id": "69295e52",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 55
+        },
+        "outputId": "e68c5129-1dae-4bd7-afe2-cdb74a4bce2d"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "float expected at most 1 argument, got 2",
+          "traceback": [
+            "\u001b[0;31mTypeError\u001b[0m\u001b[0;31m:\u001b[0m float expected at most 1 argument, got 2\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect TypeError\n",
+        "\n",
+        "float('123.0', 2)"
+      ],
+      "id": "69295e52"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5103368e"
+      },
+      "source": [
+        "If you provide too few arguments, that's also a `TypeError`."
+      ],
+      "id": "5103368e"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 10,
+      "metadata": {
+        "tags": [],
+        "id": "edec7064",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 55
+        },
+        "outputId": "9259045c-6ee5-439f-9a13-766410f27d84"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "pow expected 2 arguments, got 1",
+          "traceback": [
+            "\u001b[0;31mTypeError\u001b[0m\u001b[0;31m:\u001b[0m pow expected 2 arguments, got 1\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect TypeError\n",
+        "\n",
+        "math.pow(2)"
+      ],
+      "id": "edec7064"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5333c416"
+      },
+      "source": [
+        "And if you provide an argument with a type the function can't handle, that's a `TypeError`, too."
+      ],
+      "id": "5333c416"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 11,
+      "metadata": {
+        "tags": [],
+        "id": "f86b2896",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 55
+        },
+        "outputId": "6bfc89c6-4adc-4e69-dc6a-8536a6243e11"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "must be real number, not str",
+          "traceback": [
+            "\u001b[0;31mTypeError\u001b[0m\u001b[0;31m:\u001b[0m must be real number, not str\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect TypeError\n",
+        "\n",
+        "math.sqrt('123')"
+      ],
+      "id": "f86b2896"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "548828af"
+      },
+      "source": [
+        "This kind of checking can be annoying when you are getting started, but it helps you detect and correct errors."
+      ],
+      "id": "548828af"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "be2b6a9b"
+      },
+      "source": [
+        "## Comments\n",
+        "\n",
+        "As programs get bigger and more complicated, they get more difficult to read.\n",
+        "Formal languages are dense, and it is often difficult to look at a piece of code and figure out what it is doing and why.\n",
+        "\n",
+        "For this reason, it is a good idea to add notes to your programs to explain in natural language what the program is doing.\n",
+        "These notes are called **comments**, and they start with the `#` symbol."
+      ],
+      "id": "be2b6a9b"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "607893a6"
+      },
+      "outputs": [],
+      "source": [
+        "# number of seconds in 42:42\n",
+        "seconds = 42 * 60 + 42"
+      ],
+      "id": "607893a6"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "519c83a9"
+      },
+      "source": [
+        "In this case, the comment appears on a line by itself. You can also put\n",
+        "comments at the end of a line:"
+      ],
+      "id": "519c83a9"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 12,
+      "metadata": {
+        "id": "615a11e7"
+      },
+      "outputs": [],
+      "source": [
+        "miles = 10 / 1.61     # 10 kilometers in miles"
+      ],
+      "id": "615a11e7"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "87c8d10c"
+      },
+      "source": [
+        "Everything from the `#` to the end of the line is ignored---it has no\n",
+        "effect on the execution of the program.\n",
+        "\n",
+        "Comments are most useful when they document non-obvious features of the code.\n",
+        "It is reasonable to assume that the reader can figure out *what* the code does; it is more useful to explain *why*.\n",
+        "\n",
+        "This comment is redundant with the code and useless:"
+      ],
+      "id": "87c8d10c"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "cc7fe2e6"
+      },
+      "outputs": [],
+      "source": [
+        "v = 8     # assign 8 to v"
+      ],
+      "id": "cc7fe2e6"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "eb83b14a"
+      },
+      "source": [
+        "This comment contains useful information that is not in the code:"
+      ],
+      "id": "eb83b14a"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "7c93a00d"
+      },
+      "outputs": [],
+      "source": [
+        "v = 8     # velocity in km per hour"
+      ],
+      "id": "7c93a00d"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6cd60d4f"
+      },
+      "source": [
+        "Good variable names can reduce the need for comments, but long names can\n",
+        "make complex expressions hard to read, so there is a tradeoff."
+      ],
+      "id": "6cd60d4f"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "7d61e416"
+      },
+      "source": [
+        "## Debugging\n",
+        "\n",
+        "Three kinds of errors can occur in a program: syntax errors, runtime errors, and semantic errors.\n",
+        "It is useful to distinguish between them in order to track them down more quickly.\n",
+        "\n",
+        "* **Syntax error**: \"Syntax\" refers to the structure of a program and the rules about that structure. If there is a syntax error anywhere in your program, Python does not run the program. It displays an error message immediately.\n",
+        "\n",
+        "* **Runtime error**: If there are no syntax errors in your program, it can start running. But if something goes wrong, Python displays an error message and stops. This type of error is called a runtime error. It is also called an **exception** because it indicates that something exceptional has happened.\n",
+        "\n",
+        "* **Semantic error**: The third type of error is \"semantic\", which means related to meaning. If there is a semantic error in your program, it runs without generating error messages, but it does not do what you intended. Identifying semantic errors can be tricky because it requires you to work backward by looking at the output of the program and trying to figure out what it is doing."
+      ],
+      "id": "7d61e416"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6cd52721"
+      },
+      "source": [
+        "As we've seen, an illegal variable name is a syntax error."
+      ],
+      "id": "6cd52721"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 14,
+      "metadata": {
+        "tags": [],
+        "id": "86f07f6e",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 108
+        },
+        "outputId": "c2df53fa-19bb-49cf-f280-6e92e1f38157"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid syntax (4061783710.py, line 1)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_904/4061783710.py\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    million! = 1000000\u001b[0m\n\u001b[0m           ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect SyntaxError\n",
+        "\n",
+        "million! = 1000000"
+      ],
+      "id": "86f07f6e"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "b8971d33"
+      },
+      "source": [
+        "If you use an operator with a type it doesn't support, that's a runtime error."
+      ],
+      "id": "b8971d33"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 15,
+      "metadata": {
+        "tags": [],
+        "id": "682395ea",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 55
+        },
+        "outputId": "0e555f17-37d2-4e89-c666-cac59cd84862"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "unsupported operand type(s) for /: 'str' and 'int'",
+          "traceback": [
+            "\u001b[0;31mTypeError\u001b[0m\u001b[0;31m:\u001b[0m unsupported operand type(s) for /: 'str' and 'int'\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect TypeError\n",
+        "\n",
+        "'126' / 3"
+      ],
+      "id": "682395ea"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "e51fa6e2"
+      },
+      "source": [
+        "Finally, here's an example of a semantic error.\n",
+        "Suppose we want to compute the average of `1` and `3`, but we forget about the order of operations and write this:"
+      ],
+      "id": "e51fa6e2"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 16,
+      "metadata": {
+        "id": "2ff25bda",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "83ac9e18-9a38-4f37-9524-9d133bad8dca"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "2.5"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 16
+        }
+      ],
+      "source": [
+        "1 + 3 / 2"
+      ],
+      "id": "2ff25bda"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "0828afc0"
+      },
+      "source": [
+        "When this expression is evaluated, it does not produce an error message, so there is no syntax error or runtime error.\n",
+        "But the result is not the average of `1` and `3`, so the program is not correct.\n",
+        "This is a semantic error because the program runs but it doesn't do what's intended."
+      ],
+      "id": "0828afc0"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "07396f3d"
+      },
+      "source": [
+        "## Glossary\n",
+        "\n",
+        "**variable:**\n",
+        "A name that refers to a value.\n",
+        "\n",
+        "**assignment statement:**\n",
+        "A statement that assigns a value to a variable.\n",
+        "\n",
+        "**state diagram:**\n",
+        "A graphical representation of a set of variables and the values they refer to.\n",
+        "\n",
+        "**keyword:**\n",
+        "A special word used to specify the structure of a program.\n",
+        "\n",
+        "**import statement:**\n",
+        "A statement that reads a module file so we can use the variables and functions it contains.\n",
+        "\n",
+        "**module:**\n",
+        "A file that contains Python code, including function definitions and sometimes other statements.\n",
+        "\n",
+        "**dot operator:**\n",
+        "The operator, `.`, used to access a function in another module by specifying the module name followed by a dot and the function name.\n",
+        "\n",
+        "**evaluate:**\n",
+        "Perform the operations in an expression in order to compute a value.\n",
+        "\n",
+        "**statement:**\n",
+        "One or more lines of code that represent a command or action.\n",
+        "\n",
+        "**execute:**\n",
+        "Run a statement and do what it says.\n",
+        "\n",
+        "**argument:**\n",
+        "A value provided to a function when the function is called.\n",
+        "\n",
+        "**comment:**\n",
+        "Text included in a program that provides information about the program but has no effect on its execution.\n",
+        "\n",
+        "**runtime error:**\n",
+        "An error that causes a program to display an error message and exit.\n",
+        "\n",
+        "**exception:**\n",
+        "An error that is detected while the program is running.\n",
+        "\n",
+        "**semantic error:**\n",
+        "An error that causes a program to do the wrong thing, but not to display an error message."
+      ],
+      "id": "07396f3d"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "70ee273d"
+      },
+      "source": [
+        "## Exercises"
+      ],
+      "id": "70ee273d"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 19,
+      "metadata": {
+        "tags": [],
+        "id": "c9e6cab4",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "1182ef56-acd4-405f-8bb5-fb800f53a86a"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Exception reporting mode: Verbose\n"
+          ]
+        }
+      ],
+      "source": [
+        "# This cell tells Jupyter to provide detailed debugging information\n",
+        "# when a runtime error occurs. Run it before working on the exercises.\n",
+        "\n",
+        "%xmode Verbose"
+      ],
+      "id": "c9e6cab4"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "7256a9b2"
+      },
+      "source": [
+        "### Ask a virtual assistant\n",
+        "\n",
+        "Again, we encourage you to use a virtual assistant to learn more about any of the topics in this chapter.\n",
+        "\n",
+        "If you are curious about any of keywords we listed, you could ask \"Why is class a keyword?\" or \"Why can't variable names be keywords?\"\n",
+        "\n",
+        "You might have noticed that `int`, `float`, and `str` are not Python keywords.\n",
+        "They are variables that represent types, and they can be used as functions.\n",
+        "So it is *legal* to have a variable or function with one of those names, but it is strongly discouraged. Ask an assistant \"Why is it bad to use int, float, and str as variable names?\"\n",
+        "\n",
+        "Also ask, \"What are the built-in functions in Python?\"\n",
+        "If you are curious about any of them, ask for more information.\n",
+        "\n",
+        "In this chapter we imported the `math` module and used some of the variable and functions it provides. Ask an assistant, \"What variables and functions are in the math module?\" and \"Other than math, what modules are considered core Python?\""
+      ],
+      "id": "7256a9b2"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "f92afde0"
+      },
+      "source": [
+        "### Exercise\n",
+        "\n",
+        "Repeating our advice from the previous topic, whenever you learn a new feature, you should make errors on purpose to see what goes wrong.\n",
+        "\n",
+        "-   We've seen that `n = 17` is legal. What about `17 = n`?\n",
+        "\n",
+        "-   How about `x = y = 1`?\n",
+        "\n",
+        "-   In some languages every statement ends with a semi-colon (`;`). What\n",
+        "    happens if you put a semi-colon at the end of a Python statement?\n",
+        "\n",
+        "-   What if you put a period at the end of a statement?\n",
+        "\n",
+        "-   What happens if you spell the name of a module wrong and try to import `maath`?"
+      ],
+      "id": "f92afde0"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "9d562609"
+      },
+      "source": [
+        "### Exercise\n",
+        "Practice using the Python interpreter as a calculator:\n",
+        "\n",
+        "**Part 1.**  The volume of a sphere with radius $r$ is $\\frac{4}{3} \\pi r^3$.\n",
+        "What is the volume of a sphere with radius 5? Start with a variable named `radius` and then assign the result to a variable named `volume`. Display the result. Add comments to indicate that `radius` is in centimeters and `volume` in cubic centimeters."
+      ],
+      "id": "9d562609"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "18de7d96"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "18de7d96"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6449b12b"
+      },
+      "source": [
+        "**Part 2.** A rule of trigonometry says that for any value of $x$, $(\\cos x)^2 + (\\sin x)^2 = 1$. Let's see if it's true for a specific value of $x$ like 42.\n",
+        "\n",
+        "Create a variable named `x` with this value.\n",
+        "Then use `math.cos` and `math.sin` to compute the sine and cosine of $x$, and the sum of their squared.\n",
+        "\n",
+        "The result should be close to 1. It might not be exactly 1 because floating-point arithmetic is not exact---it is only approximately correct."
+      ],
+      "id": "6449b12b"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "de812cff"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "de812cff"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "4986801f"
+      },
+      "source": [
+        "**Part 3.** In addition to `pi`, the other variable defined in the `math` module is `e`, which represents the base of the natural logarithm, written in math notation as $e$. If you are not familiar with this value, ask a virtual assistant \"What is `math.e`?\" Now let's compute $e^2$ three ways:\n",
+        "\n",
+        "* Use `math.e` and the exponentiation operator (`**`).\n",
+        "\n",
+        "* Use `math.pow` to raise `math.e` to the power `2`.\n",
+        "\n",
+        "* Use `math.exp`, which takes as an argument a value, $x$, and computes $e^x$.\n",
+        "\n",
+        "You might notice that the last result is slightly different from the other two.\n",
+        "See if you can find out which is correct."
+      ],
+      "id": "4986801f"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "b4ada618"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "b4ada618"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "4424940f"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "4424940f"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "50e8393a"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "50e8393a"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 37,
+      "metadata": {
+        "id": "91e5a869",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "85bf8117-add1-43da-b4f8-e36e4a7070ad"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Exception reporting mode: Context\n"
+          ]
+        }
+      ],
+      "source": [
+        "# This cell tells Jupyter to go back to normal (non-verbose) exception reporting\n",
+        "# Run it before moving on to the next chapter.\n",
+        "\n",
+        "%xmode Context"
+      ],
+      "id": "91e5a869"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6bd858a8"
+      },
+      "source": [
+        "# 3. Functions\n",
+        "\n",
+        "In the previous topic we used several functions provided by Python, like `int` and `float`, and a few provided by the `math` module, like `sqrt` and `pow`.\n",
+        "In this chapter, you will learn how to create your own functions and run them.\n",
+        "And we'll see how one function can call another.\n",
+        "As examples, we'll display lyrics from Monty Python songs.\n",
+        "These silly examples demonstrate an important feature -- the ability to write your own functions is the foundation of programming.\n",
+        "\n",
+        "This chapter also introduces a new statement, the `for` loop, which is used to repeat a computation."
+      ],
+      "id": "6bd858a8"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "b4ea99c5"
+      },
+      "source": [
+        "## Defining new functions\n",
+        "\n",
+        "A **function definition** specifies the name of a new function and the sequence of statements that run when the function is called. Here's an example:"
+      ],
+      "id": "b4ea99c5"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "d28f5c1a"
+      },
+      "outputs": [],
+      "source": [
+        "def print_lyrics():\n",
+        "    print(\"I'm a lumberjack, and I'm okay.\")\n",
+        "    print(\"I sleep all night and I work all day.\")"
+      ],
+      "id": "d28f5c1a"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "0174fc41"
+      },
+      "source": [
+        "`def` is a keyword that indicates that this is a function definition.\n",
+        "The name of the function is `print_lyrics`.\n",
+        "Anything that's a legal variable name is also a legal function name.\n",
+        "\n",
+        "The empty parentheses after the name indicate that this function doesn't take any arguments.\n",
+        "\n",
+        "The first line of the function definition is called the **header** -- the rest is called the **body**.\n",
+        "The header has to end with a colon and the body has to be indented. By convention, indentation is always four spaces.\n",
+        "The body of this function is two print statements; in general, the body of a function can contain any number of statements of any kind.\n",
+        "\n",
+        "Defining a function creates a **function object**, which we can display like this."
+      ],
+      "id": "0174fc41"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "2850a402"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "2850a402"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "12bd0879"
+      },
+      "source": [
+        "The output indicates that `print_lyrics` is a function that takes no arguments.\n",
+        "`__main__` is the name of the module that contains `print_lyrics`.\n",
+        "\n",
+        "Now that we've defined a function, we can call it the same way we call built-in functions."
+      ],
+      "id": "12bd0879"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "9a048657"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "9a048657"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8f0fc45d"
+      },
+      "source": [
+        "When the function runs, it executes the statements in the body, which display the first two lines of \"The Lumberjack Song\"."
+      ],
+      "id": "8f0fc45d"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6d35193e"
+      },
+      "source": [
+        "## Parameters\n",
+        "\n",
+        "Some of the functions we have seen require arguments; for example, when you call `abs` you pass a number as an argument.\n",
+        "Some functions take more than one argument; for example, `math.pow` takes two, the base and the exponent.\n",
+        "\n",
+        "Here is a definition for a function that takes an argument."
+      ],
+      "id": "6d35193e"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 27,
+      "metadata": {
+        "id": "e5d00488"
+      },
+      "outputs": [],
+      "source": [
+        "def print_twice(string):\n",
+        "    print(string)\n",
+        "    print(string)"
+      ],
+      "id": "e5d00488"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "1716e3dc"
+      },
+      "source": [
+        "The variable name in parentheses is a **parameter**.\n",
+        "When the function is called, the value of the argument is assigned to the parameter.\n",
+        "For example, we can call `print_twice` like this."
+      ],
+      "id": "1716e3dc"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "a3ad5f46"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "a3ad5f46"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "f02be6d2"
+      },
+      "source": [
+        "Running this function has the same effect as assigning the argument to the parameter and then executing the body of the function, like this."
+      ],
+      "id": "f02be6d2"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "042dfec1"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "042dfec1"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ea8b8b6e"
+      },
+      "source": [
+        "You can also use a variable as an argument."
+      ],
+      "id": "ea8b8b6e"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "8f078ad0"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "8f078ad0"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5c1884ad"
+      },
+      "source": [
+        "In this example, the value of `line` gets assigned to the parameter `string`."
+      ],
+      "id": "5c1884ad"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "a3e5a790"
+      },
+      "source": [
+        "## Calling functions\n",
+        "\n",
+        "Once you have defined a function, you can use it inside another function.\n",
+        "To demonstrate, we'll write functions that print the lyrics of \"The Spam Song\" (<https://www.songfacts.com/lyrics/monty-python/the-spam-song>).\n",
+        "\n",
+        "> Spam, Spam, Spam, Spam,  \n",
+        "> Spam, Spam, Spam, Spam,  \n",
+        "> Spam, Spam,  \n",
+        "> (Lovely Spam, Wonderful Spam!)  \n",
+        "> Spam, Spam,\n",
+        "\n",
+        "We'll start with the following function, which takes two parameters.\n"
+      ],
+      "id": "a3e5a790"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "e86bb32c"
+      },
+      "outputs": [],
+      "source": [
+        "def repeat(word, n):\n",
+        "    print(word * n)"
+      ],
+      "id": "e86bb32c"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "bdd4daa4"
+      },
+      "source": [
+        "We can use this function to print the first line of the song, like this."
+      ],
+      "id": "bdd4daa4"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "ec117999"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "ec117999"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "c6f81e09"
+      },
+      "source": [
+        "To display the first two lines, we can define a new function that uses `repeat`."
+      ],
+      "id": "c6f81e09"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "3731ffd8"
+      },
+      "outputs": [],
+      "source": [
+        "def first_two_lines():\n",
+        "    repeat(spam, 4)\n",
+        "    repeat(spam, 4)"
+      ],
+      "id": "3731ffd8"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8058ffe4"
+      },
+      "source": [
+        "And then call it like this."
+      ],
+      "id": "8058ffe4"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "6792e63b"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "6792e63b"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "07ca432a"
+      },
+      "source": [
+        "To display the last three lines, we can define another function, which also uses `repeat`."
+      ],
+      "id": "07ca432a"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "2dcb020a"
+      },
+      "outputs": [],
+      "source": [
+        "def last_three_lines():\n",
+        "    repeat(spam, 2)\n",
+        "    print('(Lovely Spam, Wonderful Spam!)')\n",
+        "    repeat(spam, 2)"
+      ],
+      "id": "2dcb020a"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "9ff8c60e"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "9ff8c60e"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "d6456a19"
+      },
+      "source": [
+        "Finally, we can bring it all together with one function that prints the whole verse."
+      ],
+      "id": "d6456a19"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "78bf3a7b"
+      },
+      "outputs": [],
+      "source": [
+        "def print_verse():\n",
+        "    first_two_lines()\n",
+        "    last_three_lines()"
+      ],
+      "id": "78bf3a7b"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "ba5da431"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "ba5da431"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "d088fe68"
+      },
+      "source": [
+        "When we run `print_verse`, it calls `first_two_lines`, which calls `repeat`, which calls `print`.\n",
+        "That's a lot of functions.\n",
+        "\n",
+        "Of course, we could have done the same thing with fewer functions, but the point of this example is to show how functions can work together."
+      ],
+      "id": "d088fe68"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "c3b16e3f"
+      },
+      "source": [
+        "## Repetition and the range function\n",
+        "\n",
+        "If we want to display more than one verse, we can use a `for` statement.\n",
+        "Here's a simple example."
+      ],
+      "id": "c3b16e3f"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "29b7eff3"
+      },
+      "outputs": [],
+      "source": [
+        "for i in range(2):\n",
+        "    print(i)"
+      ],
+      "id": "29b7eff3"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "bf320549"
+      },
+      "source": [
+        "The first line is a header that ends with a colon.\n",
+        "The second line is the body, which has to be indented.\n",
+        "\n",
+        "The header starts with the keyword `for`, a new variable named `i`, and another keyword, `in`.\n",
+        "It uses the `range` function to create a sequence of two values, which are `0` and `1`.\n",
+        "\n",
+        "The i variable is called a **counter**, since it tracks the iteration number. It is traditionally named i (and j, k, etc. for nested loops) but you're free to use any other name, of course.\n",
+        "\n",
+        "In Python, like in most programming languges, **COUNTING STARTS FROM `0`**!\n",
+        "\n",
+        "When the `for` statement runs, it assigns the first value from `range` to `i` and then runs the `print` function in the body, which displays `0`.\n",
+        "\n",
+        "When it gets to the end of the body, it loops back around to the header, which is why this statement is called a **loop**.\n",
+        "The second time through the loop, it assigns the next value from `range` to `i`, and displays it.\n",
+        "Then, because that's the last value from `range`, the loop ends.\n",
+        "\n",
+        "Here's how we can use a `for` loop to print two verses of the song."
+      ],
+      "id": "bf320549"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "038ad592"
+      },
+      "outputs": [],
+      "source": [
+        "for i in range(2):\n",
+        "    print(\"Verse\", i)\n",
+        "    print_verse()\n",
+        "    print()"
+      ],
+      "id": "038ad592"
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "The `range` function is very useful in loops. In its simplest form it takes 1 argument called `stop` and returns a sequence of numbers from 0 (INCLUDED) to `stop` (NOT INCLUDED)"
+      ],
+      "metadata": {
+        "id": "Odc9sBO3IsTU"
+      },
+      "id": "Odc9sBO3IsTU"
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "G5RWEiJZIry3"
+      },
+      "id": "G5RWEiJZIry3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "What if you need a different starting point? The 2 argument form of `range` takes a `start` and a `stop` argument and returns a sequence of numbers from `start` (INCLUDED) to `stop` (NOT INCLUDED)."
+      ],
+      "metadata": {
+        "id": "-UoOALWjJ5dj"
+      },
+      "id": "-UoOALWjJ5dj"
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "OVID0iWYJ2Hb"
+      },
+      "id": "OVID0iWYJ2Hb",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "And it's not over! `range` can also accept a third argument, specifying the step betweeen numbers in the sequence.\n"
+      ],
+      "metadata": {
+        "id": "EyK9KIXVKxDs"
+      },
+      "id": "EyK9KIXVKxDs"
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "Et7tapy9LLEB"
+      },
+      "id": "Et7tapy9LLEB",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Using a negative step allows `range` to return a descending sequence."
+      ],
+      "metadata": {
+        "id": "EvMm6v59LLpt"
+      },
+      "id": "EvMm6v59LLpt"
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "Glx8T9yaNqWS"
+      },
+      "id": "Glx8T9yaNqWS",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "`range(stop)` is equivalent to `range(0, stop)` which is equivalent to `range(0, stop, 1)`\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "E1CbJPVXKh4v"
+      },
+      "id": "E1CbJPVXKh4v"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "88a46733"
+      },
+      "source": [
+        "You can put a `for` loop inside a function.\n",
+        "For example, `print_n_verses` takes a parameter named `n`, which has to be an integer, and displays the given number of verses."
+      ],
+      "id": "88a46733"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "8887637a"
+      },
+      "outputs": [],
+      "source": [
+        "def print_n_verses(n):\n",
+        "    for i in range(n):\n",
+        "        print_verse()\n",
+        "        print()"
+      ],
+      "id": "8887637a"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ad8060fe"
+      },
+      "source": [
+        "In this example, we don't use `i` in the body of the loop. In cases like this you can also substitute the name of the counter variable with an underscore."
+      ],
+      "id": "ad8060fe"
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "zuLbxJPNOhxu"
+      },
+      "id": "zuLbxJPNOhxu",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "b320ec90"
+      },
+      "source": [
+        "## Variables and parameters are local\n",
+        "\n",
+        "When you create a variable inside a function, it is **local**, which\n",
+        "means that it only exists inside the function.\n",
+        "For example, the following function takes two arguments, concatenates them, and prints the result twice."
+      ],
+      "id": "b320ec90"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 23,
+      "metadata": {
+        "id": "0db8408e"
+      },
+      "outputs": [],
+      "source": [
+        "def cat_twice(part1, part2):\n",
+        "    cat = part1 + part2\n",
+        "    print_twice(cat)"
+      ],
+      "id": "0db8408e"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3a35a6d0"
+      },
+      "source": [
+        "Here's an example that uses it:"
+      ],
+      "id": "3a35a6d0"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 28,
+      "metadata": {
+        "id": "1c556e48",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "d71512b7-3464-4831-bfe2-3e79c913631c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Always look on the bright side of life.\n",
+            "Always look on the bright side of life.\n"
+          ]
+        }
+      ],
+      "source": [
+        "line1 = 'Always look on the '\n",
+        "line2 = 'bright side of life.'\n",
+        "cat_twice(line1, line2)"
+      ],
+      "id": "1c556e48"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "4ab4e008"
+      },
+      "source": [
+        "When `cat_twice` runs, it creates a local variable named `cat`, which is destroyed when the function ends.\n",
+        "If we try to display it, we get a `NameError`:"
+      ],
+      "id": "4ab4e008"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 29,
+      "metadata": {
+        "tags": [],
+        "id": "73f03eea",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 179
+        },
+        "outputId": "5d6dd0ed-5083-4e0f-c940-ea8d3ef7a0de"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "name 'cat' is not defined",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_904/1958961871.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcat\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m        \u001b[0;36mglobal\u001b[0m \u001b[0;36mprint\u001b[0m \u001b[0;34m= \u001b[0;36mundefined\u001b[0m\u001b[0m\u001b[0;34m\n        \u001b[0m\u001b[0;36mglobal\u001b[0m \u001b[0;36mcat\u001b[0m \u001b[0;34m= \u001b[0;36mundefined\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mNameError\u001b[0m: name 'cat' is not defined"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect NameError\n",
+        "\n",
+        "print(cat)"
+      ],
+      "id": "73f03eea"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3ae36c29"
+      },
+      "source": [
+        "Outside of the function, `cat` is not defined.\n",
+        "\n",
+        "Parameters are also local.\n",
+        "For example, outside `cat_twice`, there is no such thing as `part1` or `part2`."
+      ],
+      "id": "3ae36c29"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5690cfc0"
+      },
+      "source": [
+        "## Tracebacks\n",
+        "\n",
+        "When a runtime error occurs in a function, Python displays the name of the function that was running, the name of the function that called it, and so on, up the stack.\n",
+        "To see an example, I'll define a version of `print_twice` that contains an error -- it tries to print `cat`, which is a local variable in another function."
+      ],
+      "id": "5690cfc0"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 30,
+      "metadata": {
+        "id": "886519cf"
+      },
+      "outputs": [],
+      "source": [
+        "def print_twice(string):\n",
+        "    print(cat)            # NameError\n",
+        "    print(cat)"
+      ],
+      "id": "886519cf"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "d7c0713b"
+      },
+      "source": [
+        "Now here's what happens when we run `cat_twice`."
+      ],
+      "id": "d7c0713b"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 31,
+      "metadata": {
+        "tags": [],
+        "id": "1fe8ee82",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "b39ed665-a60e-4069-eb45-1a86c7f44351"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Exception reporting mode: Verbose\n"
+          ]
+        }
+      ],
+      "source": [
+        "# This cell tells Jupyter to provide detailed debugging information\n",
+        "# when a runtime error occurs, including a traceback.\n",
+        "\n",
+        "%xmode Verbose"
+      ],
+      "id": "1fe8ee82"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 32,
+      "metadata": {
+        "tags": [],
+        "id": "d9082f88",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 468
+        },
+        "outputId": "d789ed25-79be-4caa-be03-7df5353bd368"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "name 'cat' is not defined",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_904/3500251659.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mcat_twice\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mline1\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mline2\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m        \u001b[0;36mglobal\u001b[0m \u001b[0;36mcat_twice\u001b[0m \u001b[0;34m= <function cat_twice at 0x7b20ccb8bc40>\u001b[0m\u001b[0;34m\n        \u001b[0m\u001b[0;36mglobal\u001b[0m \u001b[0;36mline1\u001b[0m \u001b[0;34m= 'Always look on the '\u001b[0m\u001b[0;34m\n        \u001b[0m\u001b[0;36mglobal\u001b[0m \u001b[0;36mline2\u001b[0m \u001b[0;34m= 'bright side of life.'\u001b[0m\n",
+            "\u001b[0;32m/tmp/ipykernel_904/1569914489.py\u001b[0m in \u001b[0;36mcat_twice\u001b[0;34m(part1='Always look on the ', part2='bright side of life.')\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mdef\u001b[0m \u001b[0mcat_twice\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpart1\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mpart2\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m     \u001b[0mcat\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpart1\u001b[0m \u001b[0;34m+\u001b[0m \u001b[0mpart2\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m     \u001b[0mprint_twice\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcat\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m        \u001b[0;36mglobal\u001b[0m \u001b[0;36mprint_twice\u001b[0m \u001b[0;34m= <function print_twice at 0x7b20cccb2ca0>\u001b[0m\u001b[0;34m\n        \u001b[0m\u001b[0;36mcat\u001b[0m \u001b[0;34m= 'Always look on the bright side of life.'\u001b[0m\n",
+            "\u001b[0;32m/tmp/ipykernel_904/2396480120.py\u001b[0m in \u001b[0;36mprint_twice\u001b[0;34m(string='Always look on the bright side of life.')\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mdef\u001b[0m \u001b[0mprint_twice\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mstring\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m     \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcat\u001b[0m\u001b[0;34m)\u001b[0m            \u001b[0;31m# NameError\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m        \u001b[0;36mglobal\u001b[0m \u001b[0;36mprint\u001b[0m \u001b[0;34m= \u001b[0;36mundefined\u001b[0m\u001b[0m\u001b[0;34m\n        \u001b[0m\u001b[0;36mglobal\u001b[0m \u001b[0;36mcat\u001b[0m \u001b[0;34m= \u001b[0;36mundefined\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m     \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcat\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mNameError\u001b[0m: name 'cat' is not defined"
+          ]
+        }
+      ],
+      "source": [
+        "%%expect NameError\n",
+        "\n",
+        "cat_twice(line1, line2)"
+      ],
+      "id": "d9082f88"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "2f4defcf"
+      },
+      "source": [
+        "The error message includes a **traceback**, which shows the function that was running when the error occurred, the function that called it, and so on.\n",
+        "In this example, it shows that `cat_twice` called `print_twice`, and the error occurred in a `print_twice`.\n",
+        "\n",
+        "The order of the functions in the traceback is such that the function that errored is at the bottom, preceded by the function that called it, preceded by the function that called it, and so on until the top-most code, which in Jupyter notebooks is indicated by `<cell line: n>()`"
+      ],
+      "id": "2f4defcf"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "374b4696"
+      },
+      "source": [
+        "## Why functions?\n",
+        "\n",
+        "It may not be clear yet why it is worth the trouble to divide a program into\n",
+        "functions.\n",
+        "There are several reasons:\n",
+        "\n",
+        "-   Creating a new function gives you an opportunity to name a group of\n",
+        "    statements, which makes your program easier to read and debug.\n",
+        "\n",
+        "-   Functions can make a program smaller by eliminating repetitive code.\n",
+        "    Later, if you make a change, you only have to make it in one place.\n",
+        "\n",
+        "-   Dividing a long program into functions allows you to debug the parts\n",
+        "    one at a time and then assemble them into a working whole.\n",
+        "\n",
+        "-   Well-designed functions are often useful for many programs. Once you\n",
+        "    write and debug one, you can reuse it."
+      ],
+      "id": "374b4696"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "c6dd486e"
+      },
+      "source": [
+        "## Debugging\n",
+        "\n",
+        "Debugging can be frustrating, but it is also challenging, interesting, and sometimes even fun.\n",
+        "And it is one of the most important skills you can learn.\n",
+        "\n",
+        "In some ways debugging is like detective work.\n",
+        "You are given clues and you have to infer the events that led to the\n",
+        "results you see.\n",
+        "\n",
+        "Debugging is also like experimental science.\n",
+        "Once you have an idea about what is going wrong, you modify your program and try again.\n",
+        "If your hypothesis was correct, you can predict the result of the modification, and you take a step closer to a working program.\n",
+        "If your hypothesis was wrong, you have to come up with a new one.\n",
+        "\n",
+        "For some people, programming and debugging are the same thing; that is, programming is the process of gradually debugging a program until it does what you want.\n",
+        "The idea is that you should start with a working program and make small modifications, debugging them as you go.\n",
+        "\n",
+        "If you find yourself spending a lot of time debugging, that is often a sign that you are writing too much code before you start tests.\n",
+        "If you take smaller steps, you might find that you can move faster."
+      ],
+      "id": "c6dd486e"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "d4e95e63"
+      },
+      "source": [
+        "## Glossary\n",
+        "\n",
+        "**function definition:**\n",
+        "A statement that creates a function.\n",
+        "\n",
+        "**header:**\n",
+        " The first line of a function definition.\n",
+        "\n",
+        "**body:**\n",
+        " The sequence of statements inside a function definition.\n",
+        "\n",
+        "**function object:**\n",
+        "A value created by a function definition.\n",
+        "The name of the function is a variable that refers to a function object.\n",
+        "\n",
+        "**parameter:**\n",
+        " A name used inside a function to refer to the value passed as an argument.\n",
+        "\n",
+        "**loop:**\n",
+        " A statement that runs one or more statements, often repeatedly.\n",
+        "\n",
+        "**counter**\n",
+        " A variable defined in a `for` loop that tracks the iteration number.\n",
+        "\n",
+        "**local variable:**\n",
+        "A variable defined inside a function, and which can only be accessed inside the function.\n",
+        "\n",
+        "**traceback:**\n",
+        " A list of the functions that are executing, printed when an exception occurs."
+      ],
+      "id": "d4e95e63"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "eca485f2"
+      },
+      "source": [
+        "## Exercises"
+      ],
+      "id": "eca485f2"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 33,
+      "metadata": {
+        "tags": [],
+        "id": "3f77b428",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "0ac195e5-3a7b-45a1-e69a-0c6342c17ded"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Exception reporting mode: Verbose\n"
+          ]
+        }
+      ],
+      "source": [
+        "# This cell tells Jupyter to provide detailed debugging information\n",
+        "# when a runtime error occurs. Run it before working on the exercises.\n",
+        "\n",
+        "%xmode Verbose"
+      ],
+      "id": "3f77b428"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "82951027"
+      },
+      "source": [
+        "### Ask a virtual assistant\n",
+        "\n",
+        "The statements in a function or a `for` loop are indented by four spaces, by convention.\n",
+        "But not everyone agrees with that convention.\n",
+        "If you are curious about the history of this great debate, ask a virtual assistant to \"tell me about spaces and tabs in Python\".\n",
+        "\n",
+        "Virtual assistant are pretty good at writing small functions.\n",
+        "\n",
+        "1. Ask your favorite VA to \"Write a function called repeat that takes a string and an integer and prints the string the given number of times.\"\n",
+        "\n",
+        "2. If the result uses a `for` loop, you could ask, \"Can you do it without a for loop?\"\n",
+        "\n",
+        "3. Pick any other function in this chapter and ask a VA to write it. The challenge is to describe the function precisely enough to get what you want. Use the vocabulary you have learned so far in this book.\n",
+        "\n",
+        "Virtual assistants are also pretty good at debugging functions.\n",
+        "\n",
+        "1. Ask a VA what's wrong with this version of `print_twice`.\n",
+        "\n",
+        "    ```\n",
+        "    def print_twice(string):\n",
+        "        print(cat)\n",
+        "        print(cat)\n",
+        "    ```\n",
+        "    \n",
+        "And if you get stuck on any of the exercises below, consider asking a VA for help."
+      ],
+      "id": "82951027"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "b7157b09"
+      },
+      "source": [
+        "### Exercise\n",
+        "\n",
+        "Write a function named `print_right` that takes a string named `text` as a parameter and prints the string with enough leading spaces that the last letter of the string is in the 40th column of the display."
+      ],
+      "id": "b7157b09"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "a6004271"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "a6004271"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "428fbee5"
+      },
+      "source": [
+        "Hint: Use the `len` function, the string concatenation operator (`+`) and the string repetition operator (`*`).\n",
+        "\n",
+        "Here's an example that shows how it should work."
+      ],
+      "id": "428fbee5"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "f142ce6a"
+      },
+      "outputs": [],
+      "source": [
+        "print_right(\"Monty\")\n",
+        "print_right(\"Python's\")\n",
+        "print_right(\"Flying Circus\")\n",
+        "'''\n",
+        "results should be\n",
+        "                                   Monty\n",
+        "                                Python's\n",
+        "                           Flying Circus\n",
+        "'''"
+      ],
+      "id": "f142ce6a"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "b47467fa"
+      },
+      "source": [
+        "### Exercise\n",
+        "\n",
+        "Write a function called `triangle` that takes a string and an integer and draws a pyramid with the given height, made up using copies of the string. Here's an example of a pyramid with `5` levels, using the string `'L'`."
+      ],
+      "id": "b47467fa"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "7aa95014"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "7aa95014"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "scrolled": true,
+        "tags": [],
+        "id": "b8146a0d"
+      },
+      "outputs": [],
+      "source": [
+        "triangle('L', 5)\n",
+        "'''\n",
+        "L\n",
+        "LL\n",
+        "LLL\n",
+        "LLLL\n",
+        "LLLLL\n",
+        "'''"
+      ],
+      "id": "b8146a0d"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "4a28f635"
+      },
+      "source": [
+        "### Exercise\n",
+        "\n",
+        "Write a function called `rectangle` that takes a string and two integers and draws a rectangle with the given width and height, made up using copies of the string. Here's an example of a rectangle with width `5` and height `4`, made up of the string `'H'`."
+      ],
+      "id": "4a28f635"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "bcedab79"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "bcedab79"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "scrolled": true,
+        "tags": [],
+        "id": "73b0c0f6"
+      },
+      "outputs": [],
+      "source": [
+        "rectangle('H', 5, 4)\n",
+        "'''\n",
+        "HHHHH\n",
+        "HHHHH\n",
+        "HHHHH\n",
+        "HHHHH\n",
+        "'''"
+      ],
+      "id": "73b0c0f6"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "44a5de6f"
+      },
+      "source": [
+        "### Exercise\n",
+        "\n",
+        "The song \"99 Bottles of Beer\" starts with this verse:\n",
+        "\n",
+        "> 99 bottles of beer on the wall  \n",
+        "> 99 bottles of beer  \n",
+        "> Take one down, pass it around  \n",
+        "> 98 bottles of beer on the wall  \n",
+        "\n",
+        "Then the second verse is the same, except that it starts with 98 bottles and ends with 97. The song continues -- for a very long time -- until there are 0 bottles of beer.\n",
+        "\n",
+        "Write a function called `bottle_verse` that takes a number as a parameter and displays the verse that starts with the given number of bottles.\n",
+        "\n",
+        "Hint: Consider starting with a function that can print the first, second, or last line of the verse, and then use it to write `bottle_verse`."
+      ],
+      "id": "44a5de6f"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "53424b43"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "53424b43"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "61010ffb"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "61010ffb"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "tags": [],
+        "id": "ee0076dd"
+      },
+      "source": [
+        "Use this function call to display the first verse."
+      ],
+      "id": "ee0076dd"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "47a91c7d"
+      },
+      "outputs": [],
+      "source": [
+        "bottle_verse(99)"
+      ],
+      "id": "47a91c7d"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "tags": [],
+        "id": "42c237c6"
+      },
+      "source": [
+        "If you want to print the whole song, you can use this `for` loop, which counts down from `99` to `1`.\n",
+        "You don't have to completely understand this example---we'll learn more about `for` loops and the `range` function later."
+      ],
+      "id": "42c237c6"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "336cdfa2"
+      },
+      "outputs": [],
+      "source": [
+        "for n in range(99, 0, -1):\n",
+        "    bottle_verse(n)\n",
+        "    print()"
+      ],
+      "id": "336cdfa2"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "4b02510c"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "4b02510c"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "1331faa1"
+      },
+      "source": [
+        "You can order print and ebook versions of *Think Python 3e* from\n",
+        "[Bookshop.org](https://bookshop.org/a/98697/9781098155438) and\n",
+        "[Amazon](https://www.amazon.com/_/dp/1098155432?smid=ATVPDKIKX0DER&_encoding=UTF8&tag=oreilly20-20&_encoding=UTF8&tag=greenteapre01-20&linkCode=ur2&linkId=e2a529f94920295d27ec8a06e757dc7c&camp=1789&creative=9325)."
+      ],
+      "id": "1331faa1"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "8119ba50"
+      },
+      "outputs": [],
+      "source": [
+        "from os.path import basename, exists\n",
+        "\n",
+        "def download(url):\n",
+        "    filename = basename(url)\n",
+        "    if not exists(filename):\n",
+        "        from urllib.request import urlretrieve\n",
+        "\n",
+        "        local, _ = urlretrieve(url, filename)\n",
+        "        print(\"Downloaded \" + str(local))\n",
+        "    return filename\n",
+        "\n",
+        "download('https://github.com/AllenDowney/ThinkPython/raw/v3/thinkpython.py');\n",
+        "download('https://github.com/AllenDowney/ThinkPython/raw/v3/diagram.py');\n",
+        "download('https://github.com/ramalho/jupyturtle/releases/download/2024-03/jupyturtle.py');\n",
+        "\n",
+        "import thinkpython"
+      ],
+      "id": "8119ba50"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "75b60d6c"
+      },
+      "source": [
+        "# 4. Conditionals and Recursion\n",
+        "\n",
+        "The main topic of this chapter is the `if` statement, which executes different code depending on the state of the program.\n",
+        "And with the `if` statement we'll be able to explore one of the most powerful ideas in computing, **recursion**.\n",
+        "\n",
+        "But we'll start with three new features: the modulus operator, boolean expressions, and logical operators."
+      ],
+      "id": "75b60d6c"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "4ab7caf4"
+      },
+      "source": [
+        "## Integer division and modulus\n",
+        "\n",
+        "Recall that the integer division operator, `//`, divides two numbers and rounds\n",
+        "down to an integer.\n",
+        "For example, suppose the run time of a movie is 105 minutes.\n",
+        "You might want to know how long that is in hours.\n",
+        "Conventional division returns a floating-point number:"
+      ],
+      "id": "4ab7caf4"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "30bd0ba7"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "30bd0ba7"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3f224403"
+      },
+      "source": [
+        "But we don't normally write hours with decimal points.\n",
+        "Integer division returns the integer number of hours, rounding down:"
+      ],
+      "id": "3f224403"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "451e3198"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "451e3198"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "bfa9b0cf"
+      },
+      "source": [
+        "To get the remainder, you could subtract off one hour in minutes:"
+      ],
+      "id": "bfa9b0cf"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "64b92876"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "64b92876"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "05caf27f"
+      },
+      "source": [
+        "Or you could use the **modulus operator**, `%`, which divides two numbers and returns the remainder."
+      ],
+      "id": "05caf27f"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "0a593844"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "0a593844"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "18c1e0d0"
+      },
+      "source": [
+        "The modulus operator is more useful than it might seem.\n",
+        "For example, it can check whether one number is divisible by another -- if `x % y` is zero, then `x` is divisible by `y`.\n",
+        "\n",
+        "Also, it can extract the right-most digit or digits from a number.\n",
+        "For example, `x % 10` yields the right-most digit of `x` (in base 10).\n",
+        "Similarly, `x % 100` yields the last two digits."
+      ],
+      "id": "18c1e0d0"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "5bd341f7"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "5bd341f7"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "367fce0c"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "367fce0c"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "f2344fc0"
+      },
+      "source": [
+        "Finally, the modulus operator can do \"clock arithmetic\".\n",
+        "For example, if an event starts at 11 AM and lasts three hours, we can use the modulus operator to figure out what time it ends."
+      ],
+      "id": "f2344fc0"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "db33a44d"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "db33a44d"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "351c30df"
+      },
+      "source": [
+        "The event would end at 2 PM."
+      ],
+      "id": "351c30df"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5ed1b58b"
+      },
+      "source": [
+        "## Boolean Expressions\n",
+        "\n",
+        "A **boolean expression** is an expression that is either true or false.\n",
+        "For example, the following expressions use the equals operator, `==`, which compares two values and produces `True` if they are equal and `False` otherwise:"
+      ],
+      "id": "5ed1b58b"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "85589d38"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "85589d38"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "3c9c8f61"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "3c9c8f61"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "41fbc642"
+      },
+      "source": [
+        "A common error is to use a single equal sign (`=`) instead of a double equal sign (`==`).\n",
+        "Remember that `=` assigns a value to a variable and `==` compares two values."
+      ],
+      "id": "41fbc642"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "c0e51bcc"
+      },
+      "outputs": [],
+      "source": [
+        "x = 5\n",
+        "y = 7"
+      ],
+      "id": "c0e51bcc"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "a6be44db"
+      },
+      "outputs": [],
+      "source": [
+        "x == y"
+      ],
+      "id": "a6be44db"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "d3ec6b48"
+      },
+      "source": [
+        "`True` and `False` are special values that belong to the type `bool`;\n",
+        "they are not strings:"
+      ],
+      "id": "d3ec6b48"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "90fb1c9c"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "90fb1c9c"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "c1cae572"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "c1cae572"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "451b2e8d"
+      },
+      "source": [
+        "The `==` operator is one of the **relational operators**; the others are:"
+      ],
+      "id": "451b2e8d"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "c901fe2b"
+      },
+      "outputs": [],
+      "source": [
+        "x != y               # x is not equal to y"
+      ],
+      "id": "c901fe2b"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1457949f"
+      },
+      "outputs": [],
+      "source": [
+        "x > y                # x is greater than y"
+      ],
+      "id": "1457949f"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "56bb7eed"
+      },
+      "outputs": [],
+      "source": [
+        "x < y               # x is less than to y"
+      ],
+      "id": "56bb7eed"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1cdcc7ab"
+      },
+      "outputs": [],
+      "source": [
+        "x >= y               # x is greater than or equal to y"
+      ],
+      "id": "1cdcc7ab"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "df1a1287"
+      },
+      "outputs": [],
+      "source": [
+        "x <= y               # x is less than or equal to y"
+      ],
+      "id": "df1a1287"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "db5a9477"
+      },
+      "source": [
+        "## Logical operators\n",
+        "\n",
+        "To combine boolean values into expressions, we can use **logical operators**.\n",
+        "The most common are `and`, ` or`, and `not`.\n",
+        "The meaning of these operators is similar to their meaning in English.\n",
+        "For example, the value of the following expression is `True` only if `x` is greater than `0` *and* less than `10`."
+      ],
+      "id": "db5a9477"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "848c5f2c"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "848c5f2c"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "e8c14026"
+      },
+      "source": [
+        "The following expression is `True` if *either or both* of the conditions is true, that is, if the number is divisible by 2 *or* 3:"
+      ],
+      "id": "e8c14026"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "eb66ee6a"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "eb66ee6a"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3bd0ef52"
+      },
+      "source": [
+        "Finally, the `not` operator negates a boolean expression, so the following expression is `True` if `x > y` is `False`."
+      ],
+      "id": "3bd0ef52"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "6de8b97c"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "6de8b97c"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "fc6098c2"
+      },
+      "source": [
+        "Strictly speaking, the operands of a logical operator should be boolean expressions, but Python is not very strict.\n",
+        "Any nonzero number is interpreted as `True`:"
+      ],
+      "id": "fc6098c2"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "add63275"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "add63275"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "102ceab9"
+      },
+      "source": [
+        "This flexibility can be useful, but there are some subtleties to it that can be confusing.\n",
+        "You might want to avoid it."
+      ],
+      "id": "102ceab9"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6b0f2dc1"
+      },
+      "source": [
+        "## if statements\n",
+        "\n",
+        "In order to write useful programs, we almost always need the ability to\n",
+        "check conditions and change the behavior of the program accordingly.\n",
+        "**Conditional statements** give us this ability. The simplest form is\n",
+        "the `if` statement:"
+      ],
+      "id": "6b0f2dc1"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "80937bef"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "80937bef"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "973f705e"
+      },
+      "source": [
+        "`if` is a Python keyword.\n",
+        "`if` statements have the same structure as function definitions: a\n",
+        "header followed by an indented statement or sequence of statements called a **block**.\n",
+        "\n",
+        "The boolean expression after `if` is called the **condition**.\n",
+        "If it is true, the statements in the indented block run. If not, they don't.\n",
+        "\n",
+        "There is no limit to the number of statements that can appear in the block, but there has to be at least one.\n",
+        "Occasionally, it is useful to have a block that does nothing -- usually as a place keeper for code you haven't written yet.\n",
+        "In that case, you can use the `pass` statement, which does nothing."
+      ],
+      "id": "973f705e"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "bc74a318"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "bc74a318"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "adf3f6c5"
+      },
+      "source": [
+        "The word `TODO` in a comment is a conventional reminder that there's something you need to do later."
+      ],
+      "id": "adf3f6c5"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "eb39bcd9"
+      },
+      "source": [
+        "## The `else` clause\n",
+        "\n",
+        "An `if` statement can have a second part, called an `else` clause.\n",
+        "The syntax looks like this:"
+      ],
+      "id": "eb39bcd9"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "d16f49f2"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "d16f49f2"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "e7dc8943"
+      },
+      "source": [
+        "If the condition is true, the first indented statement runs; otherwise, the second indented statement runs.\n",
+        "\n",
+        "In this example, if `x` is even, the remainder when `x` is divided by `2` is `0`, so the condition is true and the program displays `x is even`.\n",
+        "If `x` is odd, the remainder is `1`, so the condition\n",
+        "is false, and the program displays `x is odd`.\n",
+        "\n",
+        "Since the condition must be true or false, exactly one of the alternatives will run.\n",
+        "The alternatives are called **branches**."
+      ],
+      "id": "e7dc8943"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "20c8adb6"
+      },
+      "source": [
+        "## Chained conditionals\n",
+        "\n",
+        "Sometimes there are more than two possibilities and we need more than two branches.\n",
+        "One way to express a computation like that is a **chained conditional**, which includes an `elif` clause."
+      ],
+      "id": "20c8adb6"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "309fccb8"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "309fccb8"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "46916379"
+      },
+      "source": [
+        "`elif` is an abbreviation of \"else if\".\n",
+        "There is no limit on the number of `elif` clauses.\n",
+        "If there is an `else` clause, it has to be at the end and will be executed if none of the conditions are true, but there doesn't have to be\n",
+        "one.\n",
+        "\n",
+        "Each condition is checked in order.\n",
+        "If the first is false, the next is checked, and so on.\n",
+        "If one of them is true, the corresponding branch runs and the `if` statement ends.\n",
+        "Even if more than one condition is true, only the first true branch runs."
+      ],
+      "id": "46916379"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "e0c0b9dd"
+      },
+      "source": [
+        "## Nested Conditionals\n",
+        "\n",
+        "One conditional can also be nested within another.\n",
+        "We could have written the example in the previous section like this:"
+      ],
+      "id": "e0c0b9dd"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "d77539cf"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "d77539cf"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "29f67a0a"
+      },
+      "source": [
+        "The outer `if` statement contains two branches.\n",
+        "The first branch contains a simple statement. The second branch contains another `if` statement, which has two branches of its own.\n",
+        "Those two branches are both simple statements, although they could have been conditional statements as well.\n",
+        "\n",
+        "Although the indentation of the statements makes the structure apparent, **nested conditionals** can be difficult to read.\n",
+        "I suggest you avoid them when you can.\n",
+        "\n",
+        "Logical operators often provide a way to simplify nested conditional statements.\n",
+        "Here's an example with a nested conditional."
+      ],
+      "id": "29f67a0a"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "91cac1a0"
+      },
+      "outputs": [],
+      "source": [
+        "if 0 < x:\n",
+        "    if x < 10:\n",
+        "        print('x is a positive single-digit number.')"
+      ],
+      "id": "91cac1a0"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5292eb11"
+      },
+      "source": [
+        "The `print` statement runs only if we make it past both conditionals, so we get the same effect with the `and` operator."
+      ],
+      "id": "5292eb11"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "f8ba1724"
+      },
+      "outputs": [],
+      "source": [
+        "if 0 < x and x < 10:\n",
+        "    print('x is a positive single-digit number.')"
+      ],
+      "id": "f8ba1724"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "dd8e808a"
+      },
+      "source": [
+        "For this kind of condition, Python provides a more concise option:"
+      ],
+      "id": "dd8e808a"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "014cd6f4"
+      },
+      "outputs": [],
+      "source": [
+        "if 0 < x < 10:\n",
+        "    print('x is a positive single-digit number.')"
+      ],
+      "id": "014cd6f4"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "db583cd9"
+      },
+      "source": [
+        "## Recursion\n",
+        "\n",
+        "It is legal for a function to call itself.\n",
+        "It may not be obvious why that is a good thing, but it turns out to be one of the most magical things a program can do.\n",
+        "Here's an example."
+      ],
+      "id": "db583cd9"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "17904e98"
+      },
+      "outputs": [],
+      "source": [
+        "def countdown(n):\n",
+        "    if n <= 0:\n",
+        "        print('Blastoff!')\n",
+        "    else:\n",
+        "        print(n)\n",
+        "        countdown(n-1)"
+      ],
+      "id": "17904e98"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "c88e0dc7"
+      },
+      "source": [
+        "If `n` is 0 or negative, `countdown` outputs the word, \"Blastoff!\" Otherwise, it\n",
+        "outputs `n` and then calls itself, passing `n-1` as an argument.\n",
+        "\n",
+        "Here's what happens when we call this function with the argument `3`."
+      ],
+      "id": "c88e0dc7"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "6c1e32e2"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "6c1e32e2"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3f3c87ec"
+      },
+      "source": [
+        "The execution of `countdown` begins with `n=3`, and since `n` is greater\n",
+        "than `0`, it displays `3`, and then calls itself\\...\n",
+        "\n",
+        "> The execution of `countdown` begins with `n=2`, and since `n` is\n",
+        "> greater than `0`, it displays `2`, and then calls itself\\...\n",
+        ">\n",
+        "> > The execution of `countdown` begins with `n=1`, and since `n` is\n",
+        "> > greater than `0`, it displays `1`, and then calls itself\\...\n",
+        "> >\n",
+        "> > > The execution of `countdown` begins with `n=0`, and since `n` is\n",
+        "> > > not greater than `0`, it displays \"Blastoff!\" and returns.\n",
+        "> >\n",
+        "> > The `countdown` that got `n=1` returns.\n",
+        ">\n",
+        "> The `countdown` that got `n=2` returns.\n",
+        "\n",
+        "The `countdown` that got `n=3` returns."
+      ],
+      "id": "3f3c87ec"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "782e95bb"
+      },
+      "source": [
+        "A function that calls itself is **recursive**.\n",
+        "As another example, we can write a function that prints a string `n` times."
+      ],
+      "id": "782e95bb"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1bb13f8e"
+      },
+      "outputs": [],
+      "source": [
+        "def print_n_times(string, n):\n",
+        "    if n > 0:\n",
+        "        print(string)\n",
+        "        print_n_times(string, n-1)"
+      ],
+      "id": "1bb13f8e"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "73d07c17"
+      },
+      "source": [
+        "If `n` is positive, `print_n_times` displays the value of `string` and then calls itself, passing along `string` and `n-1` as arguments.\n",
+        "\n",
+        "If `n` is `0` or negative, the condition is false and `print_n_times` does nothing.\n",
+        "\n",
+        "Here's how it works."
+      ],
+      "id": "73d07c17"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "e7b68c57"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "e7b68c57"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "1fb55a78"
+      },
+      "source": [
+        "For simple examples like this, it is probably easier to use a `for`\n",
+        "loop. But we will see examples later that are hard to write with a `for`\n",
+        "loop and easy to write with recursion, so it is good to start early."
+      ],
+      "id": "1fb55a78"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "37bbc2b8"
+      },
+      "source": [
+        "## Infinite recursion\n",
+        "\n",
+        "If a recursion never reaches a base case, it goes on making recursive\n",
+        "calls forever, and the program never terminates. This is known as\n",
+        "**infinite recursion**, and it is generally not a good idea.\n",
+        "Here's a minimal function with an infinite recursion."
+      ],
+      "id": "37bbc2b8"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "af487feb"
+      },
+      "outputs": [],
+      "source": [
+        "def recurse():\n",
+        "    recurse()"
+      ],
+      "id": "af487feb"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "450a20ac"
+      },
+      "source": [
+        "Every time `recurse` is called, it calls itself, which creates another frame.\n",
+        "In Python, there is a limit to the number of frames that can be on the stack at the same time.\n",
+        "If a program exceeds the limit, it causes a runtime error."
+      ],
+      "id": "450a20ac"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "e5d6c732"
+      },
+      "outputs": [],
+      "source": [
+        "%xmode Context"
+      ],
+      "id": "e5d6c732"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "22454b51"
+      },
+      "outputs": [],
+      "source": [
+        "%%expect RecursionError\n",
+        "\n",
+        "recurse()"
+      ],
+      "id": "22454b51"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "39fc5c31"
+      },
+      "source": [
+        "The traceback indicates that there were almost 3000 frames on the stack when the error occurred.\n",
+        "\n",
+        "If you encounter an infinite recursion by accident, review your function to confirm that there is a base case that does not make a recursive call. And if there is a base case, check whether you are guaranteed to reach it."
+      ],
+      "id": "39fc5c31"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "45299414"
+      },
+      "source": [
+        "## Keyboard input\n",
+        "\n",
+        "The programs we have written so far accept no input from the user. They\n",
+        "just do the same thing every time.\n",
+        "\n",
+        "Python provides a built-in function called `input` that stops the\n",
+        "program and waits for the user to type something. When the user presses\n",
+        "*Return* or *Enter*, the program resumes and `input` returns what the user\n",
+        "typed as a string."
+      ],
+      "id": "45299414"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "f6a2e4d6"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "f6a2e4d6"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "acf9ec53"
+      },
+      "source": [
+        "Before getting input from the user, you might want to display a prompt\n",
+        "telling the user what to type. `input` can take a prompt as an argument:"
+      ],
+      "id": "acf9ec53"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "964346f0"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "964346f0"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "1b754b39"
+      },
+      "source": [
+        "The sequence `\\n` at the end of the prompt represents a **newline**, which is a special character that causes a line break -- that way the user's input appears below the prompt.\n",
+        "\n",
+        "If you expect the user to type an integer, you can use the `int` function to convert the return value to `int`."
+      ],
+      "id": "1b754b39"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "60a484d7"
+      },
+      "outputs": [],
+      "source": [],
+      "id": "60a484d7"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "0a65f2af"
+      },
+      "source": [
+        "But if they type something that's not an integer, you'll get a runtime error."
+      ],
+      "id": "0a65f2af"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "8d3d6049"
+      },
+      "outputs": [],
+      "source": [
+        "%xmode Minimal"
+      ],
+      "id": "8d3d6049"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "a04e3016"
+      },
+      "outputs": [],
+      "source": [
+        "%%expect ValueError\n",
+        "\n",
+        "speed = input()\n",
+        "int(speed)"
+      ],
+      "id": "a04e3016"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "a4ce3ed5"
+      },
+      "source": [
+        "We will see how to handle this kind of error later."
+      ],
+      "id": "a4ce3ed5"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "14c1d3dc"
+      },
+      "source": [
+        "## Debugging\n",
+        "\n",
+        "When a syntax or runtime error occurs, the error message contains a lot\n",
+        "of information, but it can be overwhelming. The most useful parts are\n",
+        "usually:\n",
+        "\n",
+        "-   What kind of error it was, and\n",
+        "\n",
+        "-   Where it occurred.\n",
+        "\n",
+        "Syntax errors are usually easy to find, but there are a few gotchas.\n",
+        "Errors related to spaces and tabs can be tricky because they are invisible\n",
+        "and we are used to ignoring them."
+      ],
+      "id": "14c1d3dc"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "b82642f6"
+      },
+      "outputs": [],
+      "source": [
+        "%%expect IndentationError\n",
+        "x = 5\n",
+        " y = 6"
+      ],
+      "id": "b82642f6"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "d1d06263"
+      },
+      "source": [
+        "In this example, the problem is that the second line is indented by one space.\n",
+        "But the error message points to `y`, which is misleading.\n",
+        "Error messages indicate where the problem was discovered, but the actual error might be earlier in the code.\n",
+        "\n",
+        "The same is true of runtime errors.\n",
+        "For example, suppose you are trying to convert a ratio to decibels, like this:"
+      ],
+      "id": "d1d06263"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "583ef53c"
+      },
+      "outputs": [],
+      "source": [
+        "%xmode Context"
+      ],
+      "id": "583ef53c"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "2f4b6082"
+      },
+      "outputs": [],
+      "source": [
+        "%%expect ValueError\n",
+        "import math\n",
+        "numerator = 9\n",
+        "denominator = 10\n",
+        "ratio = numerator // denominator\n",
+        "decibels = 10 * math.log10(ratio)"
+      ],
+      "id": "2f4b6082"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "55914374"
+      },
+      "source": [
+        "The error message indicates line 5, but there is nothing wrong with that line.\n",
+        "The problem is in line 4, which uses integer division instead of floating-point division -- as a result, the value of `ratio` is `0`.\n",
+        "When we call `math.log10`, we get a `ValueError` with the message `math domain error`, because `0` is not in the \"domain\" of valid arguments for `math.log10`, because the logarithm of `0` is undefined.\n",
+        "\n",
+        "In general, you should take the time to read error messages carefully, but don't assume that everything they say is correct."
+      ],
+      "id": "55914374"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8ffe690e"
+      },
+      "source": [
+        "## Glossary\n",
+        "\n",
+        "**recursion:**\n",
+        "The process of calling the function that is currently executing.\n",
+        "\n",
+        "**modulus operator:**\n",
+        "An operator, `%`, that works on integers and returns the remainder when one number is divided by another.\n",
+        "\n",
+        "**boolean expression:**\n",
+        "An expression whose value is either `True` or `False`.\n",
+        "\n",
+        "**relational operator:**\n",
+        "One of the operators that compares its operands: `==`, `!=`, `>`, `<`, `>=`, and `<=`.\n",
+        "\n",
+        "**logical operator:**\n",
+        "One of the operators that combines boolean expressions, including `and`, `or`, and `not`.\n",
+        "\n",
+        "**conditional statement:**\n",
+        "A statement that controls the flow of execution depending on some condition.\n",
+        "\n",
+        "**condition:**\n",
+        "The boolean expression in a conditional statement that determines which branch runs.\n",
+        "\n",
+        "**block:**\n",
+        "One or more statements indented to indicate they are part of another statement.\n",
+        "\n",
+        "**branch:**\n",
+        "One of the alternative sequences of statements in a conditional statement.\n",
+        "\n",
+        "**chained conditional:**\n",
+        "A conditional statement with a series of alternative branches.\n",
+        "\n",
+        "**nested conditional:**\n",
+        "A conditional statement that appears in one of the branches of another conditional statement.\n",
+        "\n",
+        "**recursive:**\n",
+        "A function that calls itself is recursive.\n",
+        "\n",
+        "**base case:**\n",
+        "A conditional branch in a recursive function that does not make a recursive call.\n",
+        "\n",
+        "**infinite recursion:**\n",
+        "A recursion that doesn't have a base case, or never reaches it.\n",
+        "Eventually, an infinite recursion causes a runtime error.\n",
+        "\n",
+        "**newline:**\n",
+        "A character that creates a line break between two parts of a string."
+      ],
+      "id": "8ffe690e"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8d783953"
+      },
+      "source": [
+        "## Exercises"
+      ],
+      "id": "8d783953"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "66aae3cb"
+      },
+      "outputs": [],
+      "source": [
+        "# This cell tells Jupyter to provide detailed debugging information\n",
+        "# when a runtime error occurs. Run it before working on the exercises.\n",
+        "\n",
+        "%xmode Verbose"
+      ],
+      "id": "66aae3cb"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "02f9f1d7"
+      },
+      "source": [
+        "### Ask a virtual assistant\n",
+        "\n",
+        "* Ask a virtual assistant, \"What are some uses of the modulus operator?\"\n",
+        "\n",
+        "* Python provides operators to compute the logical operations `and`, `or`, and `not`, but it doesn't have an operator that computes the exclusive `or` operation, usually written `xor`. Ask an assistant \"What is the logical xor operation and how do I compute it in Python?\"\n",
+        "\n",
+        "In this chapter, we saw two ways to write an `if` statement with three branches, using a chained conditional or a nested conditional.\n",
+        "You can use a virtual assistant to convert from one to the other.\n",
+        "For example, ask a VA, \"Convert this statement to a chained conditional.\""
+      ],
+      "id": "02f9f1d7"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "ade1ecb4"
+      },
+      "outputs": [],
+      "source": [
+        "x = 5\n",
+        "y = 7"
+      ],
+      "id": "ade1ecb4"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "dc7026c2"
+      },
+      "outputs": [],
+      "source": [
+        "if x == y:\n",
+        "    print('x and y are equal')\n",
+        "else:\n",
+        "    if x < y:\n",
+        "        print('x is less than y')\n",
+        "    else:\n",
+        "        print('x is greater than y')"
+      ],
+      "id": "dc7026c2"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "9c2a8466"
+      },
+      "source": [
+        "Ask a VA, \"Rewrite this statement with a single conditional.\""
+      ],
+      "id": "9c2a8466"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1fd919ea"
+      },
+      "outputs": [],
+      "source": [
+        "if 0 < x:\n",
+        "    if x < 10:\n",
+        "        print('x is a positive single-digit number.')"
+      ],
+      "id": "1fd919ea"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "e0fbed08"
+      },
+      "source": [
+        "See if a VA can simplify this unnecessary complexity."
+      ],
+      "id": "e0fbed08"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1e71702e"
+      },
+      "outputs": [],
+      "source": [
+        "if not x <= 0 and not x >= 10:\n",
+        "    print('x is a positive single-digit number.')"
+      ],
+      "id": "1e71702e"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "74ef776d"
+      },
+      "source": [
+        "Here's an attempt at a recursive function that counts down by two."
+      ],
+      "id": "74ef776d"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "84cbd5a4"
+      },
+      "outputs": [],
+      "source": [
+        "def countdown_by_two(n):\n",
+        "    if n == 0:\n",
+        "        print('Blastoff!')\n",
+        "    else:\n",
+        "        print(n)\n",
+        "        countdown_by_two(n-2)"
+      ],
+      "id": "84cbd5a4"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "77178e79"
+      },
+      "source": [
+        "It seems to work."
+      ],
+      "id": "77178e79"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "b0918789"
+      },
+      "outputs": [],
+      "source": [
+        "countdown_by_two(6)"
+      ],
+      "id": "b0918789"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "c9d3a8dc"
+      },
+      "source": [
+        "But it has an error. Ask a virtual assistant what's wrong and how to fix it.\n",
+        "Paste the solution it provides back here and test it."
+      ],
+      "id": "c9d3a8dc"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "240a3888"
+      },
+      "source": [
+        "### Exercise\n",
+        "\n",
+        "The `time` module provides a function, also called `time`, that\n",
+        "returns the number of seconds since the \"Unix epoch\", which is January 1, 1970, 00:00:00 UTC (Coordinated Universal Time, equivalent to GMT)."
+      ],
+      "id": "240a3888"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1e7a2c07"
+      },
+      "outputs": [],
+      "source": [
+        "from time import time\n",
+        "\n",
+        "now = time()\n",
+        "now"
+      ],
+      "id": "1e7a2c07"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "054c3197"
+      },
+      "source": [
+        "Use integer division and the modulus operator to compute the number of days since January 1, 1970 and the current time of day in hours, minutes, and seconds."
+      ],
+      "id": "054c3197"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "tags": [],
+        "id": "310196ba"
+      },
+      "source": [
+        "You can read more about the `time` module at <https://docs.python.org/3/library/time.html>."
+      ],
+      "id": "310196ba"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "c5fa57b2"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "c5fa57b2"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "322ddd0a"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "322ddd0a"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "fc43df7d"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "fc43df7d"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "0184d21a"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "0184d21a"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6b1fd514"
+      },
+      "source": [
+        "### Exercise\n",
+        "\n",
+        "If you are given three sticks, you may or may not be able to arrange\n",
+        "them in a triangle. For example, if one of the sticks is 12 inches long\n",
+        "and the other two are one inch long, you will not be able to get the\n",
+        "short sticks to meet in the middle. For any three lengths, there is a\n",
+        "test to see if it is possible to form a triangle:\n",
+        "\n",
+        "> If any of the three lengths is greater than the sum of the other two,\n",
+        "> then you cannot form a triangle. Otherwise, you can. (If the sum of\n",
+        "> two lengths equals the third, they form what is called a \"degenerate\"\n",
+        "> triangle.)\n",
+        "\n",
+        "Write a function named `is_triangle` that takes three integers as\n",
+        "arguments, and that prints either \"Yes\" or \"No\", depending on\n",
+        "whether you can or cannot form a triangle from sticks with the given\n",
+        "lengths. Hint: Use a chained conditional.\n",
+        "\n"
+      ],
+      "id": "6b1fd514"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "06381639"
+      },
+      "outputs": [],
+      "source": [
+        "# Solution goes here"
+      ],
+      "id": "06381639"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "tags": [],
+        "id": "2842401c"
+      },
+      "source": [
+        "Test your function with the following cases."
+      ],
+      "id": "2842401c"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "156273af"
+      },
+      "outputs": [],
+      "source": [
+        "is_triangle(4, 5, 6)   # should be Yes"
+      ],
+      "id": "156273af"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "e00793f4"
+      },
+      "outputs": [],
+      "source": [
+        "is_triangle(1, 2, 3)   # should be Yes"
+      ],
+      "id": "e00793f4"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "d2911c71"
+      },
+      "outputs": [],
+      "source": [
+        "is_triangle(6, 2, 3)   # should be No"
+      ],
+      "id": "d2911c71"
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "tags": [],
+        "id": "2b05586e"
+      },
+      "outputs": [],
+      "source": [
+        "is_triangle(1, 1, 12)   # should be No"
+      ],
+      "id": "2b05586e"
+    },
+    {
+      "cell_type": "markdown",
+      "id": "a7f4edf8",
+      "metadata": {
+        "tags": [],
+        "id": "a7f4edf8"
+      },
+      "source": [
+        "[Think Python: 3rd Edition](https://allendowney.github.io/ThinkPython/index.html)\n",
+        "\n",
+        "Copyright 2024 [Allen B. Downey](https://allendowney.com)\n",
+        "\n",
+        "Code license: [MIT License](https://mit-license.org/)\n",
+        "\n",
+        "Text license: [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
+      ]
+    }
+  ],
+  "metadata": {
+    "celltoolbar": "Tags",
+    "kernelspec": {
+      "display_name": "Python 3 (ipykernel)",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.10.11"
+    },
+    "colab": {
+      "provenance": [],
+      "toc_visible": true,
+      "include_colab_link": true
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
