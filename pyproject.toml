@@ -1,0 +1,13 @@
+[project]
+name = "biomina-intro-python"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.3",
+    "pandas>=3.0.1",
+    "polars>=1.39.3",
+    "scienceplots>=2.2.1",
+    "seaborn>=0.13.2",
+    "tqdm>=4.67.3",
+]
