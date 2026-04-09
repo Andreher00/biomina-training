@@ -14,4 +14,4 @@ stats = [statistic(url) for url in tqdm.tqdm(urls)]
 
 stats_per_day_in_minutes = np.concatenate(stats) / 60
 assert len(stats_per_day_in_minutes) == 365
-np.savetxt("belgian_train_puntuality.txt", stats_per_day_in_minutes)
+np.savetxt("belgian_train_punctuality.txt", stats_per_day_in_minutes)
